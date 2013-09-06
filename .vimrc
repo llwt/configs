@@ -1,3 +1,6 @@
+if filereadable(expand("~/.vimrc.before"))
+    source ~/.vimrc.before
+endif
 " Thanks to the people over at stack overflow for doing all the hard work and
 " letting me pick out what I liked
 " @url http://stackoverflow.com/questions/164847/what-is-in-your-vimrc
@@ -17,7 +20,7 @@ set viminfo=                    " don't use or save viminfo files
 
 "------ Console UI & Text display ------"
 
-set cmdheight=1                 " explicitly set the height of the command line
+set ls=2                        " Always show status line
 set showcmd                     " Show (partial) command in status line.
 set number                      " yay line numbers
 set ruler                       " show current position at bottom
