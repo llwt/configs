@@ -40,6 +40,7 @@ endif
 
 "------ Text editing and searching behavior ------"
 
+set autoread                    " watch for file changes
 set mouse=a                     " Yay! I can scroll with my mouse
 set nohlsearch                  " turn off highlighting for searched expressions
 set incsearch                   " highlight as we search however
@@ -74,6 +75,8 @@ filetype plugin indent on       " load filetype plugins and indent settings
 "----- Key [Re]Mapping -----"
 
 " NOTE: Dont put comments afer mappings
+
+set ttimeoutlen=100             " lower escape sequence timeout so escape key doesn't hang
 
 " switch ; and : so we don't need <shift> for commands
 nnoremap ; :
@@ -120,5 +123,5 @@ Bundle 'gmarik/vundle'
 " rails stuff??
 Bundle 'tpope/vim-rails.git'
 
-" required for vundle
+" since we disabled it earlier
 filetype plugin indent on
