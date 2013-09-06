@@ -37,6 +37,7 @@ endif
 
 "------ Text editing and searching behavior ------"
 
+set mouse=a                     " Yay! I can scroll with my mouse
 set nohlsearch                  " turn off highlighting for searched expressions
 set incsearch                   " highlight as we search however
 set ignorecase                  " set case insensitivity
@@ -50,6 +51,16 @@ set formatoptions=tcrql         " t - autowrap to textwidth
                                 " r - autoinsert comment leader with <Enter>
                                 " q - allow formatting of comments with :gq
                                 " l - don't format already long lines
+set backup                      " backup files as we go
+set backupdir=~/.vim/backup     " single location for backups
+set directory=~/.vim/tmp        " temps in one location as well
+" make directories if they don't exist
+if !filewritable('~/.vim/backup')
+    silent execute '!mkdir ~/.vim/backup'
+endif
+if !filewritable('~/.vim/tmp')
+    silent execute '!mkdir ~/.vim/tmp'
+endif
 
 "------ Indents and tabs ------"
 
@@ -69,11 +80,33 @@ filetype plugin indent on       " load filetype plugins and indent settings
 " NOTE: Dont put comments afer mappings
 
 " switch ; and : so we don't need <shift> for commands
-nore ; :
-nore : ;
+nnoremap ; :
+" still need ; sometimes
+nnoremap ' ;
 
 " eazy rocket ships
 imap <C-l> <Space>=><Space>
+
+" this is totally awesome - remap jj to escape in insert mode.
+" you'll never type jj anyway, so it's great!
+inoremap jj <Esc>
+
+" create Blank Newlines and stay in Normal mode
+nnoremap <silent> zj o<Esc>
+nnoremap <silent> zk O<Esc>
+
+" space will toggle folds!
+nnoremap <space> za
+
+" search mappings: These will make it so that going to the next one in a
+" search will center on the line it's found in.
+map N Nzz
+map n nzz
+
+"----- Auto Commands -----"
+
+" remove any trailing whitespace that is in the file
+autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
 "----- Vundle -----"
 
@@ -85,7 +118,7 @@ call vundle#rc()
 "-- Bundles --"
 " NOTE: comments after Bundle command are not allowed..
 
-" let Vundle manage Vundle required! 
+" let Vundle manage Vundle required!
 Bundle 'gmarik/vundle'
 
 " rails stuff??
