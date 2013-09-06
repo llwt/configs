@@ -50,12 +50,14 @@ prompt_rsegment() {
   [[ -n $1 ]] && bg="%K{$1}" || bg="%k"
   [[ -n $2 ]] && fg="%F{$2}" || fg="%f"
   CURRENT_RBG=$1
-  if [[ $CURRENT_RBG != 'NONE' && $1 != $CURRENT_RBG ]]; then
-    echo -n " %{$fg%F{$CURRENT_RBG}%}$RSEGMENT_SEPARATOR%{$fg%}%{$bg%} "
-  else
-    echo -n "%{$bg%}%{$fg%} "
-  fi
+  echo -n " %{$fg%F{$CURRENT_RBG}%}$RSEGMENT_SEPARATOR%{$fg%}%{$bg%} "
   [[ -n $3 ]] && echo -n $3
+#if [[ $CURRENT_RBG != 'NONE' && $1 != $CURRENT_RBG ]]; then
+#  echo -n " %{$fg%F{$CURRENT_RBG}%}$RSEGMENT_SEPARATOR%{$fg%}%{$bg%} "
+#  else
+#    echo -n "%{$bg%}%{$fg%} "
+#  fi
+#  [[ -n $3 ]] && echo -n $3
 }
 
 # End the prompt, closing any open segments
