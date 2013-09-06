@@ -46,3 +46,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=$PATH:/Users/llwt/.rvm/gems/ruby-2.0.0-p247/bin:/Users/llwt/.rvm/gems/ruby-2.0.0-p247@global/bin:/Users/llwt/.rvm/rubies/ruby-2.0.0-p247/bin:/Users/llwt/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+# Powerline
+. /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
