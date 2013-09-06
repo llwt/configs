@@ -4,9 +4,15 @@
 
 ### HomeBrew
 
-#### $PATH
+Simple install using ruby
 
-Move `/usr/local/bin` from the bottom to the top of `/etc/paths` so that homebrew apps take priority.
+    ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+
+After install setup $PATH. Move `/usr/local/bin` from the bottom to the top of `/etc/paths` so that homebrew apps take priority.
+
+### NPM/Node
+
+TODO
 
 ### Powerline
 
