@@ -1,0 +1,14 @@
+{
+    "name": "llwt/php",
+    "description": "Libs for local development",
+    "require": {
+        "squizlabs/php_codesniffer": "dev-master"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Steven Nance",
+            "email": "steven@devtrw.com"
+        }
+    ]
+}

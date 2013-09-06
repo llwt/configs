@@ -129,5 +129,8 @@ Bundle 'scrooloose/nerdtree'
 " PHP
 Bundle 'shawncplus/phpcomplete.vim'
 
+" Syntax Hilighting
+Bundle 'scrooloose/syntastic'
+
 " since we disabled it earlier
 filetype plugin indent on
