@@ -16,7 +16,9 @@ Install using pip.
 
     pip install git+git://github.com/Lokaltog/powerline
     
-_note the "--user" flag should not be used when python is installed with brew._ [source](https://powerline.readthedocs.org/en/latest/installation/osx.html#installation-osx), [source](https://github.com/Lokaltog/powerline/issues/39)
+_note the "--user" flag should not be used when python is installed with brew._
+
+[source(docs)](https://powerline.readthedocs.org/en/latest/installation/osx.html#installation-osx), [source(gh issue)](https://github.com/Lokaltog/powerline/issues/39)
 
 ### Python
 
