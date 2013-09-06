@@ -54,13 +54,6 @@ set formatoptions=tcrql         " t - autowrap to textwidth
 set backup                      " backup files as we go
 set backupdir=~/.vim/backup     " single location for backups
 set directory=~/.vim/tmp        " temps in one location as well
-" make directories if they don't exist
-if !filewritable('~/.vim/backup')
-    silent execute '!mkdir ~/.vim/backup'
-endif
-if !filewritable('~/.vim/tmp')
-    silent execute '!mkdir ~/.vim/tmp'
-endif
 
 "------ Indents and tabs ------"
 
