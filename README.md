@@ -66,5 +66,5 @@ _Useful commands_
 ### ZSH
     
     $ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-    $ brew install autojump
+    $ brew install autojump git-extras
 
