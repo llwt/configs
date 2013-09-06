@@ -26,7 +26,9 @@
 # A few utility functions to make it easy and re-usable to draw segmented prompts
 
 CURRENT_BG='NONE'
+CURRENT_RBG='NONE'
 SEGMENT_SEPARATOR=''
+RSEGMENT_SEPARATOR=''
 
 # Begin a segment
 # Takes two arguments, background and foreground. Both can be omitted,
@@ -41,6 +43,18 @@ prompt_segment() {
     echo -n "%{$bg%}%{$fg%} "
   fi
   CURRENT_BG=$1
+  [[ -n $3 ]] && echo -n $3
+}
+prompt_rsegment() {
+  local bg fg
+  [[ -n $1 ]] && bg="%K{$1}" || bg="%k"
+  [[ -n $2 ]] && fg="%F{$2}" || fg="%f"
+  CURRENT_RBG=$1
+  if [[ $CURRENT_RBG != 'NONE' && $1 != $CURRENT_RBG ]]; then
+    echo -n " %{$fg%F{$CURRENT_RBG}%}$RSEGMENT_SEPARATOR%{$fg%}%{$bg%} "
+  else
+    echo -n "%{$bg%}%{$fg%} "
+  fi
   [[ -n $3 ]] && echo -n $3
 }
 
@@ -73,13 +87,13 @@ prompt_git() {
   if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
     ZSH_THEME_GIT_PROMPT_DIRTY='±'
     dirty=$(parse_git_dirty)
-    ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git show-ref --head -s --abbrev |head -n1 2> /dev/null)"
+    ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="$(git show-ref --head -s --abbrev |head -n1 2> /dev/null) ➦"
     if [[ -n $dirty ]]; then
-      prompt_segment yellow black
+      prompt_rsegment yellow black
     else
-      prompt_segment green black
+      prompt_rsegment green black
     fi
-    echo -n "${ref/refs\/heads\// }$dirty"
+    echo -n "$dirty ${ref/refs\/heads\// } "
   fi
 }
 
@@ -102,14 +116,22 @@ prompt_status() {
   [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
 }
 
+prompt_time() {
+  prompt_rsegment black default '%D{%H:%M:%S}'
+}
+
 ## Main prompt
 build_prompt() {
   RETVAL=$?
   prompt_status
   prompt_context
   prompt_dir
-  prompt_git
   prompt_end
+}
+build_rprompt() {
+  prompt_git
 }
 
 PROMPT='%{%f%b%k%}$(build_prompt) '
+RPROMPT='%{%f%b%k%}$(build_rprompt) '
+#RPROMPT="%F{CURRENT_BACKGROUND}"$'${RSEGMENT_SEPARATOR}'$(build_rprompt)" %f"
