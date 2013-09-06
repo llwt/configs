@@ -68,7 +68,7 @@ set directory=~/.vim/tmp        " temps in one location as well
 
 set autoindent                  " set the cursor at same indent as line above
 set colorcolumn=+1              " column at end of text width
-set cindent                     " be smart about indenting
+set smartindent                 " be smart about indenting
 set expandtab                   " expand <Tab>s with spaces; death to tabs!
 set shiftwidth=4                " spaces for each step of (auto)indent
 set softtabstop=4               " set virtual tab stop (compat for 8-wide tabs)
