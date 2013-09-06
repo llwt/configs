@@ -1,22 +1,25 @@
-if filereadable(expand("~/.vimrc.before"))
-    source ~/.vimrc.before
-endif
-" Thanks to the people over at stack overflow for doing all the hard work and
-" letting me pick out what I liked
-" @url http://stackoverflow.com/questions/164847/what-is-in-your-vimrc
-
-"----- Reminders -----"
-
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-
 "------ General Settings -----"
 
 set nocompatible                " break away from old vi compatibility
 set fileformats=unix,dos,mac    " support all three newline formats
 set viminfo=                    " don't use or save viminfo files
+
+"----- Import before script -----"
+
+if filereadable(expand("~/.vimrc.before"))
+    source ~/.vimrc.before
+endif
+
+"----- Reminders -----"
+
+" Thanks to the people over at stack overflow for doing all the hard work and
+" letting me pick out what I liked
+" @url http://stackoverflow.com/questions/164847/what-is-in-your-vimrc
+
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 
 "------ Console UI & Text display ------"
 
@@ -31,6 +34,8 @@ set wildmenu                    " turn on wild menu :e <Tab>
 set wildmode=list:longest       " set wildmenu to list choice
 if has('syntax')
     syntax on
+    set background=dark
+    color solarized
     " Remember that rxvt-unicode has 88 colors by default; enable
     " this only if you are using the 256-color patch
     if &term == 'rxvt-unicode'
@@ -62,6 +67,7 @@ set directory=~/.vim/tmp        " temps in one location as well
 "------ Indents and tabs ------"
 
 set autoindent                  " set the cursor at same indent as line above
+set colorcolumn=+1              " column at end of text width
 set cindent                     " be smart about indenting
 set expandtab                   " expand <Tab>s with spaces; death to tabs!
 set shiftwidth=4                " spaces for each step of (auto)indent
@@ -106,31 +112,3 @@ map n nzz
 
 " remove any trailing whitespace that is in the file
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
-
-"----- Vundle -----"
-
-"-- Requred for Vundle! --"
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-"-- Bundles --"
-" NOTE: comments after Bundle command are not allowed..
-
-" let Vundle manage Vundle required!
-Bundle 'gmarik/vundle'
-
-" rails stuff??
-Bundle 'tpope/vim-rails.git'
-
-" NERD Tree - navigate file structure
-Bundle 'scrooloose/nerdtree'
-
-" PHP
-Bundle 'shawncplus/phpcomplete.vim'
-
-" Syntax Hilighting
-Bundle 'scrooloose/syntastic'
-
-" since we disabled it earlier
-filetype plugin indent on
