@@ -123,5 +123,11 @@ Bundle 'gmarik/vundle'
 " rails stuff??
 Bundle 'tpope/vim-rails.git'
 
+" NERD Tree - navigate file structure
+Bundle 'scrooloose/nerdtree'
+
+" PHP
+Bundle 'shawncplus/phpcomplete.vim'
+
 " since we disabled it earlier
 filetype plugin indent on
