@@ -11,10 +11,13 @@ Move `/usr/local/bin` from the bottom to the top of `/etc/paths` so that homebre
 ### Powerline
 
 _Make sure python is installed and you have reloaded your terminal. `$ which pip` should show `/usr/local/bin/php`._
+_Make sure vim is installed with the as described below_
 
 Install using pip.
 
     pip install git+git://github.com/Lokaltog/powerline
+    mkdir ~/.config/powerline
+    cp -R /usr/local/lib/python2.7/site-packages/powerline/config_files/* ~/.config/powerline
     
 _note the "--user" flag should not be used when python is installed with brew._
 
@@ -50,11 +53,7 @@ Install using brew, see note about `/usr/local/bin` in the HomeBrew -> $PATH sec
 
 Install using brew
 
-    $ brew install macvim --env-std --override-system-vim
-
-Or to reinstall
-
-    $ brew reinstall macvim --env-std --override-system-vim
+    $ brew install vim --override-system-vim;
     
 _Useful commands_
 
