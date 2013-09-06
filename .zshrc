@@ -39,6 +39,8 @@ COMPLETION_WAITING_DOTS="true"
 
 # Autostart tmux
 ZSH_TMUX_AUTOSTART=true
+# Don't close the terminal when exiting tmux
+ZSH_TMUX_AUTOQUIT=false
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
