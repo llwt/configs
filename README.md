@@ -1,12 +1,22 @@
 # Home & Config Notes
 
-## OSX
+## OSX 10.8.4
 
 ### HomeBrew
 
 #### $PATH
 
 Move `/usr/local/bin` from the bottom to the top of `/etc/paths` so that homebrew apps take priority.
+
+### Powerline
+
+_Make sure python is installed and you have reloaded your terminal. `$ which pip` should show `/usr/local/bin/php`._
+
+Install using pip.
+
+    pip install git+git://github.com/Lokaltog/powerline
+    
+_note the "--user" flag should not be used when python is installed with brew._ [source](https://powerline.readthedocs.org/en/latest/installation/osx.html#installation-osx), [source](https://github.com/Lokaltog/powerline/issues/39)
 
 ### Python
 
