@@ -19,7 +19,9 @@ Install using pip.
     mkdir ~/.config/powerline
     cp -R /usr/local/lib/python2.7/site-packages/powerline/config_files/* ~/.config/powerline
     
-_note the "--user" flag should not be used when python is installed with brew._
+_make sure you have the status bar visible in your .vimrc `set ls=2`. I spent a few hours scratching my head over that one_
+
+_the "--user" flag should not be used during pip install if python is installed with brew (despite with the docs say)._
 
 [source(docs)](https://powerline.readthedocs.org/en/latest/installation/osx.html#installation-osx), [source(gh issue)](https://github.com/Lokaltog/powerline/issues/39)
 
