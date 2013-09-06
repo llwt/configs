@@ -6,7 +6,10 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="agnoster"
+ZSH_THEME="solarized-powerline"
+
+# Hide user unless we aren't the default
+DEFAULT_USER="llwt"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
