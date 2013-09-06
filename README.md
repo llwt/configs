@@ -8,10 +8,6 @@
 
 Move `/usr/local/bin` from the bottom to the top of `/etc/paths` so that homebrew apps take priority.
 
-Some things to install
-    
-    brew install autojump
-
 ### Powerline
 
 _Make sure python is installed and you have reloaded your terminal. `$ which pip` should show `/usr/local/bin/php`._
@@ -65,5 +61,10 @@ _Useful commands_
 
     :w !sudo tee %               "Save a file you edited without needed permissions
     :w !sudo tee > /dev/null %   "Same as above but hide stdout
-
+    
+    
+### ZSH
+    
+    $ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+    $ brew install autojump
 
