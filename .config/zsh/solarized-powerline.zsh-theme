@@ -86,6 +86,7 @@ prompt_git() {
   local ref dirty
   if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
     ZSH_THEME_GIT_PROMPT_DIRTY='±'
+    ZSH_THEME_GIT_PROMPT_CLEAN='✔'
     dirty=$(parse_git_dirty)
     ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="$(git show-ref --head -s --abbrev |head -n1 2> /dev/null) ➦"
     if [[ -n $dirty ]]; then
