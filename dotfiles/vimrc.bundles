@@ -32,6 +32,8 @@ Bundle 'scrooloose/syntastic'
 
 " Symbols/Tags
 Bundle 'majutsushi/tagbar'
+let g:tagbar_ctags_bin="/usr/local/bin/ctags"
+let g:tagbar_width=30
 
 " Make vim play nice with iTerm2 and tmux
 Bundle 'sjl/vitality.vim'
@@ -41,6 +43,18 @@ Bundle 'altercation/vim-colors-solarized'
 
 " Doc outlines n' such
 Bundle 'Voom'
+
+" ack.vim for silver searcher support
+Bundle 'ack.vim'
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" buffer config
+Bundle 'techlivezheng/vim-plugin-minibufexpl'
+let g:miniBufExplBRSplit = 0
+let g:miniBufExplUseSingleClick = 1
+
+" Quick file opening
+Bundle 'Command-T'
 
 " Vundle Teardown "{{{
 

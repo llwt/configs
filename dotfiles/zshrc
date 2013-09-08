@@ -59,3 +59,13 @@ source $ZSH/oh-my-zsh.sh
 # Someting is resetting LSCOLORS, TODO: Figure out what it is when I have time, for now reset it
 #                                       to the default
 LSCOLORS='exfxcxdxbxegedabagacad'
+
+# automatically pushd
+setopt auto_pushd
+export dirstacksize=5
+
+# aliases
+[[ -f ~/.aliases ]] && source ~/.aliases
+
+# Add ~/.bin to path
+PATH="$HOME/.bin:$PATH"

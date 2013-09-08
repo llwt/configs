@@ -1,5 +1,6 @@
 #!/bin/zsh
 # Initial version stolen from thoughtbot/dotfiles/install.sh
+# TODO: add function to check for link before linking
 
 for name in dotfiles/*; do
 
@@ -20,7 +21,7 @@ for name in dotfiles/*; do
 done
 
 # Link zsh theme
-ln -sf ./zsh/solarized-powerline.zsh-theme ~/.oh-my-zsh/themes/solarized-powerline.zsh-theme
+ln -sf "${PWD}/zsh/solarized-powerline.zsh-theme" ~/.oh-my-zsh/themes/solarized-powerline.zsh-theme
 
 # clone vundle if necessary
 if [ ! -d ~/.vim/bundle/vundle ]; then
@@ -30,4 +31,8 @@ fi
 # add dictionary for vim NOTE: vim doesn't seem to like symlinks to this file
 ln -f ./vim/spell/en.utf-8.add ~/.vim/bundle/vundle/spell/en.utf-8.add
 
+# Install vundle bundles
 vim -u ~/.vimrc.before +BundleInstall +qa
+
+# Link bin file
+ln -sf "${PWD}/bin" ~/.bin

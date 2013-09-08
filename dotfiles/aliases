@@ -1,0 +1,2 @@
+# Most are already covered by oh-my-zsh
+alias mkdir='mkdir -p'

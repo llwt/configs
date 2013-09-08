@@ -9,6 +9,9 @@
 set nocompatible                " break away from old vi compatibility
 set fileformats=unix,dos,mac    " support all three newline formats
 set viminfo=                    " don't use or save viminfo files
+set splitbelow                  " Open new split panes to right and bottom, which feels more natural
+set splitright
+set hidden                      " allow hiding buffers with changes in them
 
 "}}}
 " Imports "{{{
@@ -93,6 +96,9 @@ filetype plugin indent on       " load filetype plugins and indent settings
 
 " NOTE: dont put comments afer mappings
 
+" change leader "," is easier "\"
+let mapleader=","
+
 set ttimeoutlen=100             " lower escape sequence timeout so escape key doesn't hang
 
 " switch ; and : so we don't need <shift> for commands
@@ -119,11 +125,30 @@ nnoremap <space> za
 map N Nzz
 map n nzz
 
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" Tagbar and nerdtree
+noremap <silent> <Leader>t :TagbarToggle<CR>
+nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>m :MBEToggle<CR>
+nnoremap <silent> <Leader>f :CommandT<CR>
+
 "}}}
 " Auto Commands "{{{
 
 " remove any trailing whitespace that is in the file
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+
+" start nerdtree when vim is opened
+autocmd vimenter * NERDTree
+" if you only want nerdtree open when no file is
+" specified
+" autocmd vimenter * if !argc() | NERDTree | endif
+
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it for commit messages, when the position is invalid, or when
@@ -136,5 +161,52 @@ autocmd BufReadPost *
 
 " Set syntax highlighting for specific file types
 autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+" Automatically wrap at 100 characters for Markdown
+autocmd BufRead,BufNewFile *.md setlocal textwidth=100
+
+"}}}
+" Silver Searcher! "{{{
+
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+    " Use Ag over Grep
+    set grepprg=ag\ --nogroup\ --nocolor
+
+    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+    " ag is fast enough that CtrlP doesn't need to cache
+    let g:ctrlp_use_caching = 0
+endif
+
+"}}}
+" Tab Completion "{{{
+
+" will insert tab at beginning of line,
+" will use completion if not at beginning
+set complete=.,w,t
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
+
+"}}}
+" HTML "{{{
+
+" Treat <li> and <p> tags like the block tags they are
+let g:html_indent_tags = 'li\|p'
+
+
+"}}}
+" Syntastic "{{{
+
+" configure syntastic syntax checking to check on open as well as save
+let g:syntastic_check_on_open=1
 
 "}}}

@@ -84,6 +84,10 @@ Install Ctags for autocompletion support
 
     $ brew install ctags
 
+Install [silver searcher](https://github.com/ggreer/the_silver_searcher) for faster searches in vim
+
+    $ brew install the_silver_searcher
+
 _Useful commands_
 
     :w !sudo tee %               "save a file you edited without needed permissions
