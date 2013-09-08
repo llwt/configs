@@ -1,6 +1,8 @@
-# VIM {{{
+VIM
+===
 
-## Cursor movement {{{
+Cursor movement
+===============
 
     h - move left
     j - move down
@@ -18,8 +20,9 @@
     G - Go To command (prefix with number - 5G goes to line 5)
     Note: Prefix a cursor movement command with a number to repeat it. For example, 4j moves down 4 lines.
 
-}}}
-## Insert Mode - Inserting/Appending text {{{
+
+Insert Mode - Inserting/Appending text
+======================================
 
     i - start insert mode at cursor
     I - insert at the beginning of the line
@@ -30,8 +33,9 @@
     ea - append at end of word
     Esc - exit insert mode
 
-}}}
-## Editing {{{
+
+Editing
+=======
 
     r - replace a single character (does not use insert mode)
     J - join line below to the current one
@@ -44,8 +48,9 @@
     u - undo
     . - repeat last command
 
-}}}
-## Marking text (visual mode) {{{
+
+Marking text (visual mode)
+==========================
 
     v - start visual mode, mark lines, then do command (such as y-yank)
     V - start Linewise visual mode
@@ -59,8 +64,9 @@
     iB - inner {} block
     Esc - exit visual mode
 
-}}}
-## Visual commands {{{
+
+Visual commands
+===============
 
     > - shift right
     < - shift left
@@ -68,8 +74,9 @@
     d - delete marked text
     ~ - switch case
 
-}}}
-## Cut and Paste {{{
+
+Cut and Paste
+=============
 
     yy - yank (copy) a line
     2yy - yank 2 lines
@@ -81,16 +88,18 @@
     dw - delete (cut) the current word
     x - delete (cut) current character
 
-}}}
-## Exiting {{{
+
+Exiting
+=======
 
     :w - write (save) the file, but don't exit
     :wq - write (save) and quit
     :q - quit (fails if anything has changed)
     :q! - quit and throw away changes
 
-}}}
-## Search/Replace {{{
+
+Search/Replace
+==============
 
     /pattern - search for pattern
     ?pattern - search backward for pattern
@@ -99,8 +108,9 @@
     :%s/old/new/g - replace all old with new throughout file
     :%s/old/new/gc - replace all old with new throughout file with confirmations
 
-}}}
-## Working with multiple files {{{
+
+Working with multiple files
+===========================
 
     :e filename - Edit a file in a new buffer
     :bnext (or :bn) - go to next buffer
@@ -110,16 +120,17 @@
     ctrl+ws - Split windows
     ctrl+ww - switch between windows
 
-}}}
-## Bundles {{{
+
+Bundles
+=======
 
     :BundleList          - list configured bundles
     :BundleInstall(!)    - install(update) bundles
     :BundleSearch(!) foo - search(or refresh cache first) for foo
     :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 
-}}}
-## Folding {{{
+Folding
+=======
 
     zf#j      - creates a fold from the cursor down # lines.
     zf/string - creates a fold from the cursor to string .
@@ -136,6 +147,3 @@
     [z        - move to start of open fold.
     ]z        - move to end of open fold.
 
-}}}
-
-}}}

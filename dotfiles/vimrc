@@ -24,32 +24,6 @@ endif
 "}}}
 " Reminders "{{{
 
-" Bundles "{{{
-
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-
-"}}}
-" Folding "{{{
-
-"  zf#j      - creates a fold from the cursor down # lines.
-"  zf/string - creates a fold from the cursor to string .
-"  zj        - moves the cursor to the next fold.     <REMAPPED to newline below w/o insert>
-"  zk        - moves the cursor to the previous fold. <REMAPPED to newline above w/o insert>
-"  zo        - opens a fold at the cursor.
-"  zO        - opens all folds at the cursor.
-"  zm        - increases the foldlevel by one.
-"  zM        - closes all open folds.
-"  zr        - decreases the foldlevel by one.
-"  zR        - decreases the foldlevel to zero -- all folds will be open.
-"  zd        - deletes the fold at the cursor.
-"  zE        - deletes all folds.
-"  [z        - move to start of open fold.
-"  ]z        - move to end of open fold.
-
-" }}}
 
 "}}}
 " Console UI & Text display "{{{

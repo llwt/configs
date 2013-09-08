@@ -39,6 +39,9 @@ Bundle 'sjl/vitality.vim'
 " Solarized theme
 Bundle 'altercation/vim-colors-solarized'
 
+" Doc outlines n' such
+Bundle 'Voom'
+
 " Vundle Teardown "{{{
 
 " since we disabled it earlier
