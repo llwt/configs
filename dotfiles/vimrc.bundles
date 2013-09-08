@@ -1,15 +1,19 @@
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+" Configuration for bundles managed with Vundle
+" @url https://github.com/gmarik/vundle
 
-"----- Vundle -----"
-"-- Requred for Vundle! --"
+" Vundle setup "{{{
+set nocompatible
+
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-"-- Bundles --"
+"}}}
+
+" -------------------------------------------------------------------------------
+" Bundles:
 " NOTE: comments after Bundle command are not allowed..
+" -------------------------------------------------------------------------------
 
 " let Vundle manage Vundle required!
 Bundle 'gmarik/vundle'
@@ -35,5 +39,9 @@ Bundle 'sjl/vitality.vim'
 " Solarized theme
 Bundle 'altercation/vim-colors-solarized'
 
+" Vundle Teardown "{{{
+
 " since we disabled it earlier
 filetype plugin indent on
+
+"}}}

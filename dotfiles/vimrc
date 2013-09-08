@@ -1,27 +1,59 @@
-"------ General Settings -----"
+" vim:foldmethod=marker:foldlevel=0
+"
+" Thanks to the people over at stack overflow for doing all the hard work and
+" letting me pick out what I liked
+" @url http://stackoverflow.com/questions/164847/what-is-in-your-vimrc
+"
+" General Settings "{{{
 
 set nocompatible                " break away from old vi compatibility
 set fileformats=unix,dos,mac    " support all three newline formats
 set viminfo=                    " don't use or save viminfo files
 
-"----- Import before script -----"
+"}}}
+" Imports "{{{
 
 if filereadable(expand("~/.vimrc.before"))
     source ~/.vimrc.before
 endif
 
-"----- Reminders -----"
+if filereadable(expand("~/.vimrc.bundles"))
+    source ~/.vimrc.bundles
+endif
 
-" Thanks to the people over at stack overflow for doing all the hard work and
-" letting me pick out what I liked
-" @url http://stackoverflow.com/questions/164847/what-is-in-your-vimrc
+"}}}
+" Reminders "{{{
+
+" Bundles "{{{
 
 " :BundleList          - list configured bundles
 " :BundleInstall(!)    - install(update) bundles
 " :BundleSearch(!) foo - search(or refresh cache first) for foo
 " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 
-"------ Console UI & Text display ------"
+"}}}
+" Folding "{{{
+
+"  zf#j      - creates a fold from the cursor down # lines.
+"  zf/string - creates a fold from the cursor to string .
+"  zj        - moves the cursor to the next fold.     <REMAPPED to newline below w/o insert>
+"  zk        - moves the cursor to the previous fold. <REMAPPED to newline above w/o insert>
+"  zo        - opens a fold at the cursor.
+"  zO        - opens all folds at the cursor.
+"  zm        - increases the foldlevel by one.
+"  zM        - closes all open folds.
+"  zr        - decreases the foldlevel by one.
+"  zR        - decreases the foldlevel to zero -- all folds will be open.
+"  zd        - deletes the fold at the cursor.
+"  zE        - deletes all folds.
+"  [z        - move to start of open fold.
+"  ]z        - move to end of open fold.
+
+" }}}
+
+"}}}
+" Console UI & Text display "{{{
+
 
 set ls=2                        " Always show status line
 set showcmd                     " Show (partial) command in status line.
@@ -43,7 +75,8 @@ if has('syntax')
     endif
 endif
 
-"------ Text editing and searching behavior ------"
+"}}}
+" Text editing and searching behavior "{{{
 
 set autoread                    " watch for file changes
 set mouse=a                     " Yay! I can scroll with my mouse
@@ -55,6 +88,7 @@ set nostartofline               " leave my cursor position alone!
 set backspace=2                 " equiv to :set backspace=indent,eol,start
 set textwidth=100               " 80 columns is not old news, I like 100
 set showmatch                   " show matching brackets
+set foldmethod=marker           " fold methods on markers by default
 set formatoptions=tcrql         " t - autowrap to textwidth
                                 " c - autowrap comments to textwidth
                                 " r - autoinsert comment leader with <Enter>
@@ -64,12 +98,13 @@ set backup                      " backup files as we go
 set backupdir=~/.vim/backup     " single location for backups
 set directory=~/.vim/tmp        " temps in one location as well
 
-"------ Indents and tabs ------"
+"}}}
+" Indents and tabs "{{{
 
 set autoindent                  " set the cursor at same indent as line above
 set colorcolumn=+1              " column at end of text width
 set smartindent                 " be smart about indenting
-set expandtab                   " expand <Tab>s with spaces; death to tabs!
+set expandtab                   " expand <tab>s with spaces; death to tabs!
 set shiftwidth=4                " spaces for each step of (auto)indent
 set softtabstop=4               " set virtual tab stop (compat for 8-wide tabs)
 set tabstop=8                   " for proper display of files with tabs
@@ -78,9 +113,10 @@ set copyindent                  " use existing indents for new indents
 set preserveindent              " save as much indent structure as possible
 filetype plugin indent on       " load filetype plugins and indent settings
 
-"----- Key [Re]Mapping -----"
+"}}}
+" Key [re]mapping "{{{
 
-" NOTE: Dont put comments afer mappings
+" NOTE: dont put comments afer mappings
 
 set ttimeoutlen=100             " lower escape sequence timeout so escape key doesn't hang
 
@@ -108,7 +144,10 @@ nnoremap <space> za
 map N Nzz
 map n nzz
 
-"----- Auto Commands -----"
+"}}}
+" Auto Commands "{{{
 
 " remove any trailing whitespace that is in the file
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+
+"}}}

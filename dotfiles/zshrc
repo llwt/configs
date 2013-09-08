@@ -55,3 +55,7 @@ plugins=(autojump bower brew colored-man composer gem git git-extras osx pip rub
 . /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 source $ZSH/oh-my-zsh.sh
+
+# Someting is resetting LSCOLORS, TODO: Figure out what it is when I have time, for now reset it
+#                                       to the default
+LSCOLORS='exfxcxdxbxegedabagacad'
