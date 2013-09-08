@@ -22,5 +22,9 @@ done
 # Link zsh theme
 ln -sf ./zsh/solarized-powerline.zsh-theme ~/.oh-my-zsh/themes/solarized-powerline.zsh-theme
 
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+# clone vundle if necessary
+if [ ! -d ~/.vim/bundle/vundle ]; then
+    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+fi
+
 vim -u ~/.vimrc.before +BundleInstall +qa
