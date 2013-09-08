@@ -59,6 +59,7 @@ set incsearch                   " highlight as we search however
 set ignorecase                  " set case insensitivity
 set smartcase                   " unless there's a capital letter
 set nostartofline               " leave my cursor position alone!
+set spell spelllang=en_us       " enable spell checking
 set backspace=2                 " equiv to :set backspace=indent,eol,start
 set textwidth=100               " 80 columns is not old news, I like 100
 set showmatch                   " show matching brackets
@@ -123,5 +124,17 @@ map n nzz
 
 " remove any trailing whitespace that is in the file
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+
+" When editing a file, always jump to the last known cursor position.
+" Don't do it for commit messages, when the position is invalid, or when
+" inside an event handler (happens when dropping a file on gvim).
+" SOURCE: https://github.com/thoughtbot/dotfiles/blob/master/vimrc
+autocmd BufReadPost *
+\ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+\   exe "normal g`\"" |
+\ endif
+
+" Set syntax highlighting for specific file types
+autocmd BufRead,BufNewFile *.md set filetype=markdown
 
 "}}}

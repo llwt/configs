@@ -27,4 +27,7 @@ if [ ! -d ~/.vim/bundle/vundle ]; then
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 fi
 
+# add dictionary for vim NOTE: vim doesn't seem to like symlinks to this file
+ln -f ./vim/spell/en.utf-8.add ~/.vim/bundle/vundle/spell/en.utf-8.add
+
 vim -u ~/.vimrc.before +BundleInstall +qa
