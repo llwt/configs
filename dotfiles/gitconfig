@@ -1,0 +1,7 @@
+[user]
+	email = steven@devtrw.com
+	name = Steven Nance
+[core]
+	excludesfile = ~/.gitignore_global
+[push]
+	default = simple
