@@ -24,8 +24,12 @@ Bundle 'tpope/vim-rails.git'
 " NERD Tree - navigate file structure
 Bundle 'scrooloose/nerdtree'
 
-" PHP
+" PHP coolness
 Bundle 'shawncplus/phpcomplete.vim'
+let g:phpcomplete_parse_docblock_comments = 1
+
+" Autocompletion
+Bundle 'Valloric/YouCompleteMe'
 
 " Syntax Hilighting
 Bundle 'scrooloose/syntastic'

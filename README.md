@@ -74,6 +74,12 @@ Install using brew, see note about `/usr/local/bin` in the HomeBrew -> $PATH sec
 
 [source](https://rvm.io/rvm/install)
 
+#### Installing rdoc
+
+    $ rvm docs generate
+
+Then use the "ri" command to look up stuff in the ruby api
+
 ### [Mac]Vim
 
 Install using brew
