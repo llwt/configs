@@ -36,3 +36,12 @@ vim -u ~/.vimrc.before +BundleInstall +qa
 
 # Link bin file
 ln -sf "${PWD}/bin" ~/.bin
+
+# Compile tmux pbcopy support
+if [[ ! -e "${PWD}/bin/reattach-to-user-namespace" ]]; then
+    cd ./tmux/tmux-MacOSX-pasteboard.git
+    make reattach-to-user-namespace
+    rm reattach-to-user-namespace.o
+    cd -
+    mv ./tmux/tmux-MacOSX-pasteboard.git/reattach-to-user-namespace "${PWD}/bin/"
+fi
