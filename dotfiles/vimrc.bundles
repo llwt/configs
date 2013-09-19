@@ -60,6 +60,12 @@ let g:miniBufExplUseSingleClick = 1
 " Quick file opening
 Bundle 'Command-T'
 
+" Git commands in vim
+Bundle 'fugitive.vim'
+
+" Undo tree
+Bundle 'sjl/gundo.vim'
+
 " Vundle Teardown "{{{
 
 " since we disabled it earlier

@@ -99,6 +99,7 @@ filetype plugin indent on       " load filetype plugins and indent settings
 " change leader "," is easier "\"
 let mapleader=","
 
+set ttimeout
 set ttimeoutlen=100             " lower escape sequence timeout so escape key doesn't hang
 
 " switch ; and : so we don't need <shift> for commands
@@ -131,8 +132,14 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+" Use alt + [h,j,k,l] to resize windows
+nnoremap <silent> <ESC>h <C-w>5<
+nnoremap <silent> <ESC>j <C-W>5-
+nnoremap <silent> <ESC>k <C-W>5+
+nnoremap <silent> <ESC>l <C-w>5>
+
 " Tagbar and nerdtree
-noremap <silent> <Leader>t :TagbarToggle<CR>
+nnoremap <silent> <Leader>t :TagbarToggle<CR>
 nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>m :MBEToggle<CR>
 nnoremap <silent> <Leader>f :CommandT<CR>
@@ -161,8 +168,10 @@ autocmd BufReadPost *
 
 " Set syntax highlighting for specific file types
 autocmd BufRead,BufNewFile *.md set filetype=markdown
+" disable wordwrap
+:set nowrap
 
-" Automatically wrap at 100 characters for Markdown
+" Except for markdown, in which case automatically wrap at 100 characters
 autocmd BufRead,BufNewFile *.md setlocal textwidth=100
 
 "}}}
