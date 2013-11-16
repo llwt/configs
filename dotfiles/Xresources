@@ -1,0 +1,55 @@
+! terminal colors ------------------------------------------------------------
+
+! Sauce: http://blog.z3bra.org/2013/10/home-sweet-home.html
+*background:#222222
+*foreground:#e8e9ca
+
+*color0:    #222222
+*color1:    #8b3e2f
+*color2:    #526f33
+*color3:    #665847
+*color4:    #4a708b
+*color5:    #7a378b
+*color6:    #528b8b
+*color7:    #999999
+
+*color8:    #4c4c4c
+*color9:    #d75f00
+*color10:   #cee318
+*color11:   #eee685
+*color12:   #9ac0cd
+*color13:   #9f79ee
+*color14:   #79cdcd
+*color15:   #e8e9ca
+
+! From Arch install instructions
+! ! tangoesque scheme
+! *background: #111111
+! *foreground: #babdb6
+! ! Black (not tango) + DarkGrey
+! *color0:  #000000
+! *color8:  #555753
+! ! DarkRed + Red
+! *color1:  #ff6565
+! *color9:  #ff8d8d
+! ! DarkGreen + Green
+! *color2:  #93d44f
+! *color10: #c8e7a8
+! ! DarkYellow + Yellow
+! *color3:  #eab93d
+! *color11: #ffc123
+! ! DarkBlue + Blue
+! *color4:  #204a87
+! *color12: #3465a4
+! ! DarkMagenta + Magenta
+! *color5:  #ce5c00
+! *color13: #f57900
+! !DarkCyan + Cyan (both not tango)
+! *color6:  #89b6e2
+! *color14: #46a4ff
+! ! LightGrey + White
+! *color7:  #cccccc
+! *color15: #ffffff
+
+! Others to try:
+! http://www.reddit.com/r/unixporn/comments/1ao7vg/arch_xmonad_flowers_grow_neckbeards_in_the_spring/
