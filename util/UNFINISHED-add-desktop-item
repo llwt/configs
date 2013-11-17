@@ -1,0 +1,21 @@
+#!/usr/bin/env zsh
+
+BOLD=`tput bold`
+RESET=`tput sgr0`
+UNDERLINE=`tput smul`
+
+if ! [ -n "${1}" ] || ! [ -n "${2}" ]; then
+    echo -e "Usage: add-desktop-item ${BOLD}APP_NAME EXEC_PATH${RESET}"
+    exit 1
+fi
+
+CONFIG_NAME="/usr/share/applications/${1}.desktop"
+if [ ${CONFIG_NAME} ]; then
+    exit 1
+fi
+
+echo "[Desktop Entry]\n\
+Name=${1}
+Exec=${2}"
+
+
