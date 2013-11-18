@@ -1,4 +1,3 @@
-
 tmux [source](https://gist.github.com/andreyvit/2921703)
 ========================================================
 
@@ -325,3 +324,14 @@ Plugins
     R   - Refresh the tree, useful if files change outside of Vim
     ?   - Toggle NERD Tree's quick help
 
+Default Applications
+====================
+
+Config Files
+------------
+~/.local/share/applications/defaults.list
+~/.local/share/applications/mimeapps.list
+~/.local/share/applications/mimeinfo.cache
+/usr/share/applications/mimeinfo.cache
+/usr/share/applications/mimeapps.list
+/usr/share/applications/defaults.list
