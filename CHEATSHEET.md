@@ -324,6 +324,17 @@ Plugins
     R   - Refresh the tree, useful if files change outside of Vim
     ?   - Toggle NERD Tree's quick help
 
+Git
+===
+
+Rewrite History
+---------------
+### Erase everything but "directory-to-keep", useful for splitting off a directory ###
+[source](http://stackoverflow.com/a/2805084/1056965)
+
+    git filter-branch --index-filter 'git ls-tree --name-only --full-tree $GIT_COMMIT | grep -v "^directory-to-keep$" | xargs git rm --cached -r' -- --all
+
+
 Default Applications
 ====================
 
