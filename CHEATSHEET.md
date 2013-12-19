@@ -334,6 +334,9 @@ Rewrite History
 
     git filter-branch --index-filter 'git ls-tree --name-only --full-tree $GIT_COMMIT | grep -v "^directory-to-keep$" | xargs git rm --cached -r' -- --all
 
+### Erase specific directory ###
+
+[see here](https://help.github.com/articles/remove-sensitive-data)
 
 Default Applications
 ====================
