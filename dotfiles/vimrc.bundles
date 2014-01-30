@@ -19,7 +19,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " rails stuff??
-Bundle 'tpope/vim-rails.git'
+" Bundle 'tpope/vim-rails.git'
 
 " NERD Tree - navigate file structure
 Bundle 'scrooloose/nerdtree'
@@ -49,8 +49,8 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'Voom'
 
 " ack.vim for silver searcher support
-Bundle 'ack.vim'
-let g:ackprg = 'ag --nogroup --nocolor --column'
+ Bundle 'ack.vim'
+ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " buffer config
 Bundle 'techlivezheng/vim-plugin-minibufexpl'
@@ -58,13 +58,14 @@ let g:miniBufExplBRSplit = 0
 let g:miniBufExplUseSingleClick = 1
 
 " Quick file opening
-Bundle 'Command-T'
+" Causing segfaults in OSX for some reason
+" Bundle 'Command-T'
 
 " Git commands in vim
-Bundle 'fugitive.vim'
+ Bundle 'fugitive.vim'
 
 " Undo tree
-Bundle 'sjl/gundo.vim'
+" Bundle 'sjl/gundo.vim'
 
 " Vundle Teardown "{{{
 
