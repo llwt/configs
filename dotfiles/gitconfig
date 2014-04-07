@@ -4,7 +4,7 @@
 	email = steven@devtrw.com
 	name = Steven Nance
 [core]
-	excludesfile = /Users/llwt/.gitignore_global
+	excludesfile = /opt/boxen/config/git/gitignore
 [push]
 	default = simple
 [difftool "sourcetree"]
@@ -13,3 +13,10 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+
+[hub]
+protocol = https
+
+
+[credential]
+helper = /opt/boxen/bin/boxen-git-credential
