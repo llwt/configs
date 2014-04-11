@@ -1,1 +1,0 @@
- - [ ] Add rvm to zsh prompt
