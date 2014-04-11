@@ -1,3 +1,6 @@
+TODO: move all this to boxen
+TODO: look into using rake to handle dotfiles. see: https://github.com/r00k/dotfiles
+
 # Home & Config Notes
 
 ## OSX 10.8.4
