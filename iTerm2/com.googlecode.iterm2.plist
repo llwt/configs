@@ -524,7 +524,7 @@
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>2402 1236 384 129 0 0 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>13 12 2559 706 0 0 3840 2138 </string>
+	<string>0 4 3840 1704 0 0 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1288 1687 585 451 0 0 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1115,7 +1115,7 @@
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
-			<integer>25</integer>
+			<integer>50</integer>
 			<key>Screen</key>
 			<integer>0</integer>
 			<key>Scrollback Lines</key>
@@ -1481,7 +1481,7 @@
 				<real>0.90980392694473267</real>
 			</dict>
 			<key>Bonjour Service Address</key>
-			<string>172.16.138.1</string>
+			<string>fde2:23c0:7bfa:5bda:683a:b4f6:cb2e:245b</string>
 			<key>Character Encoding</key>
 			<integer>4</integer>
 			<key>Close Sessions On End</key>
@@ -1489,7 +1489,7 @@
 			<key>Columns</key>
 			<integer>80</integer>
 			<key>Command</key>
-			<string>ssh 172.16.138.1</string>
+			<string>ssh fde2:23c0:7bfa:5bda:683a:b4f6:cb2e:245b</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -1536,7 +1536,7 @@
 				<real>0.90980392694473267</real>
 			</dict>
 			<key>Guid</key>
-			<string>C710D260-158F-417B-B886-3AE0044B2B64</string>
+			<string>48E27AC8-1918-4243-9E82-BA550F297497</string>
 			<key>Hide After Opening</key>
 			<false/>
 			<key>Horizontal Spacing</key>
@@ -1863,7 +1863,7 @@
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
-			<integer>25</integer>
+			<integer>100</integer>
 			<key>Screen</key>
 			<integer>0</integer>
 			<key>Scrollback Lines</key>
@@ -2229,7 +2229,7 @@
 				<real>0.90980392694473267</real>
 			</dict>
 			<key>Bonjour Service Address</key>
-			<string>fde2:23c0:7bfa:5bda:683a:b4f6:cb2e:245b</string>
+			<string>10.3.2.104</string>
 			<key>Character Encoding</key>
 			<integer>4</integer>
 			<key>Close Sessions On End</key>
@@ -2237,7 +2237,7 @@
 			<key>Columns</key>
 			<integer>80</integer>
 			<key>Command</key>
-			<string>ssh fde2:23c0:7bfa:5bda:683a:b4f6:cb2e:245b</string>
+			<string>ssh 10.3.2.104</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -2284,7 +2284,7 @@
 				<real>0.90980392694473267</real>
 			</dict>
 			<key>Guid</key>
-			<string>5A58D043-68C4-47B3-9E59-26A3E97BE993</string>
+			<string>53A70F91-C6DC-44D1-BDA1-4DFF408A4B5A</string>
 			<key>Hide After Opening</key>
 			<false/>
 			<key>Horizontal Spacing</key>
@@ -2611,7 +2611,7 @@
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
-			<integer>25</integer>
+			<integer>100</integer>
 			<key>Screen</key>
 			<integer>0</integer>
 			<key>Scrollback Lines</key>
@@ -2778,6 +2778,8 @@
 			<string></string>
 		</dict>
 	</array>
+	<key>NoSyncNeverRemindPrefsChangesCopy</key>
+	<true/>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
