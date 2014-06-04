@@ -16,9 +16,9 @@ set hidden                      " allow hiding buffers with changes in them
 "}}}
 " Imports "{{{
 
-if filereadable(expand("~/.vimrc.before"))
-    source ~/.vimrc.before
-endif
+" if filereadable(expand("~/.vimrc.before"))
+"     source ~/.vimrc.before
+" endif
 
 if filereadable(expand("~/.vimrc.bundles"))
     source ~/.vimrc.bundles
@@ -44,7 +44,7 @@ set wildmode=list:longest       " set wildmenu to list choice
 if has('syntax')
     syntax on
     set background=dark
-    "color solarized
+    color solarized
     " Remember that rxvt-unicode has 88 colors by default; enable
     " this only if you are using the 256-color patch
     if &term == 'rxvt-unicode'

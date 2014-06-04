@@ -1,75 +1,84 @@
-" Configuration for bundles managed with Vundle
+" Configuration for bundles managed with NeoBundle
 " @url https://github.com/gmarik/vundle
 
-" Vundle setup "{{{
+" NeoBundle setup "{{{
 set nocompatible
 
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" Required:
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+
+" filetype off
+" set rtp+=~/.vim/bundle/vundle/
+" call vundle#rc()
 
 "}}}
 
 " -------------------------------------------------------------------------------
-" Bundles:
-" NOTE: comments after Bundle command are not allowed..
+" NeoBundles:
 " -------------------------------------------------------------------------------
 
-" let Vundle manage Vundle required!
-Bundle 'gmarik/vundle'
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
 
-" rails stuff??
-" Bundle 'tpope/vim-rails.git'
+" Let NeoNeoBundle manage NeoNeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 " NERD Tree - navigate file structure
-Bundle 'scrooloose/nerdtree'
+NeoBundle 'scrooloose/nerdtree'
 
 " PHP coolness
-Bundle 'shawncplus/phpcomplete.vim'
+NeoBundle 'shawncplus/phpcomplete.vim'
 let g:phpcomplete_parse_docblock_comments = 1
 
 " Autocompletion
-Bundle 'Valloric/YouCompleteMe'
+NeoBundle 'Valloric/YouCompleteMe'
 
 " Syntax Hilighting
-Bundle 'scrooloose/syntastic'
+NeoBundle 'scrooloose/syntastic'
 
 " Symbols/Tags
-Bundle 'majutsushi/tagbar'
+NeoBundle 'majutsushi/tagbar'
 let g:tagbar_ctags_bin="/usr/local/bin/ctags"
 let g:tagbar_width=30
 
 " Make vim play nice with iTerm2 and tmux
-Bundle 'sjl/vitality.vim'
+NeoBundle 'sjl/vitality.vim'
 
 " Solarized theme
-Bundle 'altercation/vim-colors-solarized'
+NeoBundle 'altercation/vim-colors-solarized'
 
 " Doc outlines n' such
-Bundle 'Voom'
+NeoBundle 'Voom'
 
 " ack.vim for silver searcher support
- Bundle 'ack.vim'
- let g:ackprg = 'ag --nogroup --nocolor --column'
+NeoBundle 'ack.vim'
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " buffer config
-Bundle 'techlivezheng/vim-plugin-minibufexpl'
+NeoBundle 'techlivezheng/vim-plugin-minibufexpl'
 let g:miniBufExplBRSplit = 0
 let g:miniBufExplUseSingleClick = 1
 
 " Quick file opening
 " Causing segfaults in OSX for some reason
-" Bundle 'Command-T'
+NeoBundle 'Command-T'
 
 " Git commands in vim
- Bundle 'fugitive.vim'
+NeoBundle 'fugitive.vim'
 
 " Undo tree
-" Bundle 'sjl/gundo.vim'
+NeoBundle 'sjl/gundo.vim'
 
-" Vundle Teardown "{{{
+" NeoBundle Teardown "{{{
+
+call neobundle#end()
 
 " since we disabled it earlier
 filetype plugin indent on
 
 "}}}
+
+" If there are uninstalled bundles found on startup,
+" this will convieniently prompt you to install them.
+NeoBundleCheck
