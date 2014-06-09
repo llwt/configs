@@ -16,9 +16,9 @@ set hidden                      " allow hiding buffers with changes in them
 "}}}
 " Imports "{{{
 
-" if filereadable(expand("~/.vimrc.before"))
-"     source ~/.vimrc.before
-" endif
+if filereadable(expand("~/.vimrc.before"))
+    source ~/.vimrc.before
+endif
 
 if filereadable(expand("~/.vimrc.bundles"))
     source ~/.vimrc.bundles
@@ -100,7 +100,7 @@ filetype plugin indent on       " load filetype plugins and indent settings
 let mapleader=","
 
 set ttimeout
-set ttimeoutlen=100             " lower escape sequence timeout so escape key doesn't hang
+set ttimeoutlen=50             " lower escape sequence timeout so escape key doesn't hang
 
 " switch ; and : so we don't need <shift> for commands
 nnoremap ; :

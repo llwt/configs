@@ -1,84 +1,22 @@
-" Configuration for bundles managed with NeoBundle
-" @url https://github.com/gmarik/vundle
-
-" NeoBundle setup "{{{
-set nocompatible
-
-" Required:
-set runtimepath+=~/.vim/bundle/neobundle.vim/
-
-" filetype off
-" set rtp+=~/.vim/bundle/vundle/
-" call vundle#rc()
-
-"}}}
+" Configuration for bundles managed with pathogen and defined in boxen
 
 " -------------------------------------------------------------------------------
-" NeoBundles:
+" Bundle Configuration
 " -------------------------------------------------------------------------------
 
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
+" Required for pathogen to handle packages
+execute pathogen#infect()
 
-" Let NeoNeoBundle manage NeoNeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" NERD Tree - navigate file structure
-NeoBundle 'scrooloose/nerdtree'
-
-" PHP coolness
-NeoBundle 'shawncplus/phpcomplete.vim'
+" phpcomplete config
 let g:phpcomplete_parse_docblock_comments = 1
 
-" Autocompletion
-NeoBundle 'Valloric/YouCompleteMe'
-
-" Syntax Hilighting
-NeoBundle 'scrooloose/syntastic'
-
-" Symbols/Tags
-NeoBundle 'majutsushi/tagbar'
+" Symbols/Tags(tagbar) config
 let g:tagbar_ctags_bin="/usr/local/bin/ctags"
 let g:tagbar_width=30
 
-" Make vim play nice with iTerm2 and tmux
-NeoBundle 'sjl/vitality.vim'
-
-" Solarized theme
-NeoBundle 'altercation/vim-colors-solarized'
-
-" Doc outlines n' such
-NeoBundle 'Voom'
-
 " ack.vim for silver searcher support
-NeoBundle 'ack.vim'
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
-" buffer config
-NeoBundle 'techlivezheng/vim-plugin-minibufexpl'
+" buffer config(minibufexpl)
 let g:miniBufExplBRSplit = 0
 let g:miniBufExplUseSingleClick = 1
-
-" Quick file opening
-" Causing segfaults in OSX for some reason
-NeoBundle 'Command-T'
-
-" Git commands in vim
-NeoBundle 'fugitive.vim'
-
-" Undo tree
-NeoBundle 'sjl/gundo.vim'
-
-" NeoBundle Teardown "{{{
-
-call neobundle#end()
-
-" since we disabled it earlier
-filetype plugin indent on
-
-"}}}
-
-" If there are uninstalled bundles found on startup,
-" this will convieniently prompt you to install them.
-NeoBundleCheck
