@@ -50,6 +50,8 @@ export dirstacksize=5
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
+alias composer='hhvm /opt/boxen/phpenv/bin/composer'
+
 
 # Add ~/.bin to path
 PATH="$PATH:$HOME/.bin"
