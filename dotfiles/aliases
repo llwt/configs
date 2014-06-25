@@ -1,2 +1,26 @@
-# Most are already covered by oh-my-zsh
+# Show contents of directory after cd-ing into it
+#
+# -l: show as list
+# -r: reverse sort order
+# -t: sort by time modified
+# -h: (in conjunction with -l) shows human file sizes (KB, MB, GB, etc.)
+#
+chpwd() {
+  gls -lrth --color=auto
+}
+
+# Short of learning how to actually configure OSX, here's a hacky way to use
+# GNU manpages for programs that are GNU ones, and fallback to OSX manpages otherwise
+# source: https://gist.github.com/quickshiftin/9130153
+alias man='_() { echo $1; man -M $(brew --prefix)/opt/coreutils/libexec/gnuman $1 1>/dev/null 2>&1;  if [ "$?" -eq 0 ]; then man -M $(brew --prefix)/opt/coreutils/libexec/gnuman $1; else man $1; fi }; _'
+
+
+# Create parent directories by default
 alias mkdir='mkdir -p'
+
+# use GNU version of ls
+alias ls='gls --color=auto'
+
+# speed up composer commands by using hhvm
+alias composer='hhvm /opt/boxen/phpenv/bin/composer'
+
