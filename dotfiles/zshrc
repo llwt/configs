@@ -43,9 +43,6 @@ plugins=(\
  web-search\
 )
 
-# Load oh-my-zsh...
-source $ZSH/oh-my-zsh.sh
-
 #}}}
 ### General Config #{{{
 
@@ -124,3 +121,6 @@ eval $(dircolors ~/src/llwt/dircolors-solarized/dircolors.256dark)
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 #}}}
+
+# Load oh-my-zsh...
+source $ZSH/oh-my-zsh.sh
