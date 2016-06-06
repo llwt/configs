@@ -22,5 +22,5 @@ alias mkdir='mkdir -p'
 alias ls='gls --color=auto'
 
 # speed up composer commands by using hhvm
-alias composer='hhvm /opt/boxen/phpenv/bin/composer'
+#alias composer='hhvm /opt/boxen/phpenv/bin/composer'
 

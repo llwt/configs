@@ -24,9 +24,7 @@ plugins=(\
  autojump\
  bower\
  brew\
- colored-man\
  common-aliases\
- composer\
  gem\
  git\
  git-extras\
@@ -37,11 +35,17 @@ plugins=(\
  ruby\
  rbenv\
  ssh-agent\
- sublime\
- symfony2\
- vagrant\
- web-search\
 )
+###
+## Plugins I'm not using at the moment
+###
+# colored-man\ ### Fucks up sudo command, not sure wtf is going on here
+#
+# composer\
+# sublime\
+# symfony2\
+# vagrant\
+# web-search\
 
 #}}}
 ### General Config #{{{
@@ -75,6 +79,14 @@ export PATH="/usr/local/heroku/bin:$PATH"
 ### Add VMWare Fusion Commands
 export PATH="/Applications/VMware Fusion.app/Contents/Library:$PATH"
 
+### Add Nodenv
+if which nodenv > /dev/null;
+  ### Use brew path rather than default
+  export NODENV_ROOT=/usr/local/var/nodenv
+  ### Initialize
+  then eval "$(nodenv init -)";
+fi
+
 #}}}
 ### Import Aliases #{{{
 
@@ -89,7 +101,7 @@ export PATH="/Applications/VMware Fusion.app/Contents/Library:$PATH"
 export EDITOR=vim
 
 ### Default vagrant provider
-export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
+#export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
 
 ### Fix ruby gem installation errors
 export ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future
@@ -98,7 +110,17 @@ export ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future
 ### Bootstrap Environment/Libs #{{{
 
 ### Load boxen
-source /opt/boxen/env.sh
+#source /opt/boxen/env.sh
+
+# add sbin to path for brew
+export PATH="/user/local/sbin:$PATH"
+
+# setup GNU Coreutils
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+
+## load chruby
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
 
 ### alias git to hub command
 ### see  https://github.com/github/hub
@@ -107,11 +129,20 @@ eval "$(hub alias -s)"
 # added by travis gem
 [ -f /Users/steven/.travis/travis.sh ] && source /Users/steven/.travis/travis.sh
 
+# pyenv
+export PYENV_ROOT=/usr/local/var/pyenv
+eval "$(pyenv init -)"
+
+# phpenv
+export PATH="$HOME/.phpenv/bin:$PATH"
+eval "$(phpenv init -)"
+
+# venv
+eval "$(pyenv virtualenv-init -)"
+
+export PATH="$PYENV_ROOT/bin:$PATH"
 #}}}
 ### GNU Utils Setup #{{{
-
-# setup GNU Coreutils
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 
 # Configure LS Colors
 # NOTE: Make sure this is after GNU Utils are added to the path
