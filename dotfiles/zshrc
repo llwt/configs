@@ -115,6 +115,12 @@ export ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future
 # add sbin to path for brew
 export PATH="/user/local/sbin:$PATH"
 
+# add haskell executables from cabal to path
+export PATH="$HOME/Library/Haskell/bin:$PATH"
+
+# add haskell executables from stack to path
+export PATH="$HOME/.local/bin:$PATH"
+
 # setup GNU Coreutils
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 
