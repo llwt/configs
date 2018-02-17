@@ -12,7 +12,7 @@ filetype plugin indent on
 let g:phpcomplete_parse_docblock_comments = 1
 
 " Symbols/Tags(tagbar) config
-let g:tagbar_ctags_bin="/opt/boxen/homebrew/bin/ctags"
+let g:tagbar_ctags_bin="/usr/local/bin/ctags"
 let g:tagbar_width=30
 
 " ack.vim for silver searcher support
