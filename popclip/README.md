@@ -1,1 +1,0 @@
-Double click these to install. Note, they will be "consumed" by pop clip so make sure to revert the changes afterward
