@@ -56,6 +56,10 @@ else
   export EDITOR='code -w'
 fi
 
+# Fix GPG cli commands
+# Setup instructions reminder: https://gist.github.com/webframp/75c680930b6b2caba9a1be6ec23477c1
+export GPG_TTY=$(tty)
+
 # Tab completion to use ls colors
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 autoload -Uz compinit
