@@ -18,12 +18,6 @@ chpwd() {
 # Create parent directories by default
 alias mkdir='mkdir -p'
 
-# use GNU version of ls
-#alias ls='gls --color=auto'
-
-# speed up composer commands by using hhvm
-#alias composer='hhvm /opt/boxen/phpenv/bin/composer'
-
 
 # Docker Compose
 alias dcdu='docker-compose down && docker-compose up'
