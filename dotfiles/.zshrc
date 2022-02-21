@@ -41,6 +41,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  colored-man-pages
   git
   fnm
   zsh-autosuggestions
@@ -66,6 +67,10 @@ zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 autoload -Uz compinit
 compinit
 
+# Edit things with vscode
+export EDITOR="code --wait"
+export VISUAL="$EDITOR"
+
 # local scripts
 export PATH=$HOME/.bin:$PATH
 
@@ -87,6 +92,10 @@ HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
 setopt histignorealldups
 
+# Starship Propmp
+# TODO: maybe...
+# eval "$(starship init zsh)"
+
 # ZSH Syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -98,3 +107,4 @@ fi
 
 # environment specific configurations
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+

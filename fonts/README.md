@@ -1,1 +1,2 @@
-https://github.com/tonsky/FiraCode
+- https://github.com/tonsky/FiraCode
+- https://www.nerdfonts.com/font-downloads
