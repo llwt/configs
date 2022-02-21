@@ -125,6 +125,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Edit things with vscode
+export EDITOR="code --wait"
+export VISUAL="$EDITOR"
+
 # local scripts
 export PATH=$HOME/.bin:$PATH
 
