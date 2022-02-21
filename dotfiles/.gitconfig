@@ -1,5 +1,3 @@
-[gpg]
-	program = /usr/local/bin/gpg
 [commit]
 	gpgsign = true
 [init]
@@ -18,5 +16,9 @@
   tool = vscode
 [mergetool "vscode"]
   cmd = code --wait $MERGED
+[user]
+	email = stevenmnance@gmail.com
+	name = Steven Nance
+	signingkey = 81321DC2803CDD04C9FF8E5825CA48C543589339
 [includeIf "gitdir:/Users/s.nance/"]
   path = ~/src/llwt/configs/dotfiles/.gitconfig-work
