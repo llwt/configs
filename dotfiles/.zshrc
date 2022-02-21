@@ -83,5 +83,11 @@ setopt histignorealldups
 # ZSH Syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# Fly.io
+if [ -d "$HOME/.fly" ]; then
+  export FLYCTL_INSTALL="$HOME/.fly"
+  export PATH="$FLYCTL_INSTALL/bin:$PATH"
+fi
+
 # environment specific configurations
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
