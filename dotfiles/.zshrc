@@ -25,7 +25,7 @@ BULLETTRAIN_PROMPT_ORDER=(
   go
   rust
   elixir
-  git
+  # git
   hg
   cmd_exec_time
 )
@@ -91,6 +91,7 @@ BULLETTRAIN_PROMPT_ORDER=(
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  colored-man-pages
   git
   fnm
   zsh-autosuggestions
@@ -138,8 +139,13 @@ eval "`fnm env`"
 HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
 
+# Starship Propmp
+# TODO: maybe...
+# eval "$(starship init zsh)"
+
 # ZSH Syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # environment specific configurations
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
