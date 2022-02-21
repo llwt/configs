@@ -45,6 +45,7 @@ plugins=(
   fnm
   zsh-autosuggestions
   zsh-dircolors-solarized
+  yarn
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -72,8 +73,14 @@ export PATH=$HOME/.bin:$PATH
 export PATH=$HOME/.fnm:$PATH
 eval "`fnm env`"
 
-# Fuzzy search
+# Fuzzy search -- osx
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Fuzzy search -- debian
+if [ -f /usr/share/doc/fzf/examples ]; then
+  source /usr/share/doc/fzf/examples/key-bindings.zsh
+  source /usr/share/doc/fzf/examples/completion.zsh
+fi
 
 # increse command history 
 HISTSIZE=999999999
