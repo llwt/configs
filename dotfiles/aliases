@@ -18,6 +18,10 @@ chpwd() {
 # Create parent directories by default
 alias mkdir='mkdir -p'
 
+# Lazy yarn
+alias y='yarn'
+
+
 
 # Docker Compose
 alias dcdu='docker-compose down && docker-compose up'
