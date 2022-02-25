@@ -34,12 +34,6 @@ COMPLETION_WAITING_DOTS="true"
 # much, much faster.
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-
-# Homebrew if we're on OSX -- Need this before plugins
-if [ -d "/opt/homebrew" ]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
-
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -68,6 +62,11 @@ fi
 # Load aliases
 source $HOME/src/llwt/configs/dotfiles/aliases
 
+# Homebrew if we're on OSX -- Need this before plugins
+if [ -d "/opt/homebrew" ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # Fix GPG cli commands
 # Setup instructions reminder: https://gist.github.com/webframp/75c680930b6b2caba9a1be6ec23477c1
 export GPG_TTY=$(tty)
@@ -89,12 +88,10 @@ HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
 setopt histignorealldups
 
-# Starship Propmp
-# TODO: maybe...
-# eval "$(starship init zsh)"
-
-# Enable fnm when present.
-if ! type "$fnm" > /dev/null; then
+# Enable fnm when present
+export PATH=$PATH:~/.fnm
+if command -v fnm > /dev/null; then
+  echo "using"
   eval "$(fnm env --use-on-cd)"
 fi
 
