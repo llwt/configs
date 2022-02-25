@@ -101,5 +101,6 @@ if [ -d "$HOME/.fly" ]; then
 fi
 
 # environment specific configurations
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local
-
+if [ -f ~/.zshrc.local ]; then
+  source ~/.zshrc.local
+fi
