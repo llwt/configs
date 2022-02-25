@@ -35,6 +35,11 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 
+# Homebrew if we're on OSX -- Need this before plugins
+if [ -d "/opt/homebrew" ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -44,10 +49,13 @@ plugins=(
   colored-man-pages
   git
   fnm
+  fzf
+  yarn
   zsh-autosuggestions
   zsh-dircolors-solarized
-  yarn
+  zsh-syntax-highlighting
 )
+
 
 source $ZSH/oh-my-zsh.sh
 
@@ -77,19 +85,6 @@ export VISUAL="$EDITOR"
 # local scripts
 export PATH=$HOME/.bin:$PATH
 
-# fnm
-export PATH=$HOME/.fnm:$PATH
-eval "`fnm env`"
-
-# Fuzzy search -- osx
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Fuzzy search -- debian
-if [ -f /usr/share/doc/fzf/examples ]; then
-  source /usr/share/doc/fzf/examples/key-bindings.zsh
-  source /usr/share/doc/fzf/examples/completion.zsh
-fi
-
 # increse command history 
 HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
@@ -98,9 +93,6 @@ setopt histignorealldups
 # Starship Propmp
 # TODO: maybe...
 # eval "$(starship init zsh)"
-
-# ZSH Syntax highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Fly.io
 if [ -d "$HOME/.fly" ]; then

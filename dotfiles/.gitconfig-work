@@ -1,5 +1,5 @@
 [gpg]
-	program = /usr/local/bin/gpg
+	program = /opt/homebrew/bin/gpg
 [user]
 	signingkey = 54D3540CE41145029D8A84907BED1A46C186A274
 	email = steven.nance@deliveryhero.com
