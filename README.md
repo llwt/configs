@@ -41,6 +41,3 @@ gpg --edit-key 7BED1A46C186A274
 # 5 // trust ultimately
 # y
 ```
-
-### Manual Things
-* Load iterm2 preferences
