@@ -6,7 +6,7 @@
 # -h: (in conjunction with -l) shows human file sizes (KB, MB, GB, etc.)
 #
 chpwd() {
-  ls -lrth --color=auto
+  ls -lrthG
 }
 
 # Short of learning how to actually configure OSX, here's a hacky way to use
