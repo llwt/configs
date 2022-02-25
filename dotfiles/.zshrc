@@ -91,7 +91,6 @@ setopt histignorealldups
 # Enable fnm when present
 export PATH=$PATH:~/.fnm
 if command -v fnm > /dev/null; then
-  echo "using"
   eval "$(fnm env --use-on-cd)"
 fi
 
