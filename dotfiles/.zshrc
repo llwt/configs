@@ -56,7 +56,6 @@ plugins=(
   zsh-syntax-highlighting
 )
 
-
 source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
@@ -93,6 +92,11 @@ setopt histignorealldups
 # Starship Propmp
 # TODO: maybe...
 # eval "$(starship init zsh)"
+
+# Enable fnm when present.
+if ! type "$fnm" > /dev/null; then
+  eval "$(fnm env --use-on-cd)"
+fi
 
 # Fly.io
 if [ -d "$HOME/.fly" ]; then
