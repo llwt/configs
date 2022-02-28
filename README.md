@@ -41,3 +41,11 @@ gpg --edit-key 7BED1A46C186A274
 # 5 // trust ultimately
 # y
 ```
+
+### Mac Specifics
+
+Enable key repeat:
+
+```sh
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+```
