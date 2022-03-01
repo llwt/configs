@@ -22,7 +22,5 @@
 	signingkey = 81321DC2803CDD04C9FF8E5825CA48C543589339
 [includeIf "gitdir:/Users/s.nance/"]
   path = ~/src/llwt/configs/dotfiles/.gitconfig-work
-[includeIf "gitdir:/Users/temporaryadmin/"]
-  path = ~/src/llwt/configs/dotfiles/.gitconfig-work
 [pager]
 	branch = false

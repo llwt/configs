@@ -43,7 +43,6 @@ plugins=(
   colored-man-pages
   git
   fnm
-  fzf
   yarn
   zsh-autosuggestions
   zsh-dircolors-solarized
@@ -93,6 +92,9 @@ export PATH=$PATH:~/.fnm
 if command -v fnm > /dev/null; then
   eval "$(fnm env --use-on-cd)"
 fi
+
+# Enable fzf when present
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Fly.io
 if [ -d "$HOME/.fly" ]; then
