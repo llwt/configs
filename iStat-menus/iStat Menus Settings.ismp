@@ -13,15 +13,19 @@
 	</dict>
 	<key>preferences</key>
 	<dict>
+		<key>Battery_DropdownGraph</key>
+		<string>0.16 0.63 0.60 1.00</string>
+		<key>Battery_DropdownOrderDisabled</key>
+		<string></string>
 		<key>Battery_MenubarCustomizeStates</key>
 		<integer>1</integer>
 		<key>Battery_MenubarModeCharged</key>
 		<array>
 			<dict>
 				<key>key</key>
-				<string>3</string>
+				<string>6</string>
 				<key>uuid</key>
-				<string>A16C9AC5-9A9B-4730-8C34-E0C47CC441C4</string>
+				<string>38B35B10-D66D-46FD-87B9-CDB41F4D800A</string>
 			</dict>
 		</array>
 		<key>Battery_MenubarModeCharging</key>
@@ -69,6 +73,12 @@
 				<string>05E9E9F8-5D85-4028-B363-A00233063E4E</string>
 			</dict>
 		</array>
+		<key>CPU_DropdownGraphSystem</key>
+		<string>0.83 0.21 0.51 1.00</string>
+		<key>CPU_DropdownGraphUser</key>
+		<string>0.16 0.63 0.60 1.00</string>
+		<key>CPU_DropdownOrderDisabled</key>
+		<string></string>
 		<key>CPU_MenubarMode</key>
 		<array>
 			<dict>
@@ -84,15 +94,23 @@
 				<string>A6CE7650-524E-49B5-9F06-E8BB503D7172</string>
 			</dict>
 		</array>
+		<key>Disks_DropdownGraphRead</key>
+		<string>0.16 0.63 0.60 1.00</string>
+		<key>Disks_DropdownGraphUsed</key>
+		<string>0.16 0.63 0.60 1.00</string>
+		<key>Disks_DropdownGraphWrite</key>
+		<string>0.83 0.21 0.51 1.00</string>
+		<key>Disks_DropdownOrderDisabled</key>
+		<string>removable,unmounted</string>
 		<key>Disks_MenubarItems</key>
 		<array>
 			<dict>
 				<key>boot</key>
 				<true/>
 				<key>key</key>
-				<string>003ED35B-06C5-4399-94FE-30CA72A0EE6A</string>
+				<string>997ED159-36C5-4383-A259-9FA1D3789349</string>
 				<key>name</key>
-				<string>Macintosh HD - Data</string>
+				<string>Data</string>
 			</dict>
 		</array>
 		<key>Disks_MenubarMode</key>
@@ -116,11 +134,15 @@
 				<string>F088D970-7746-4479-8BC4-EC794CCC894B</string>
 			</dict>
 		</array>
+		<key>DropdownTheme-Dark</key>
+		<integer>3</integer>
+		<key>DropdownTheme-SectionHeaders</key>
+		<string>0.00 0.17 0.21 1.00</string>
 		<key>FanControl_Sets</key>
 		<array>
 			<dict>
 				<key>model</key>
-				<string>MacBookPro16,2</string>
+				<string>MacBookPro18,3</string>
 				<key>name</key>
 				<string>Medium</string>
 				<key>speeds</key>
@@ -129,33 +151,33 @@
 						<key>fan</key>
 						<string>F0Ac</string>
 						<key>high</key>
-						<integer>6336</integer>
+						<integer>5779</integer>
 						<key>low</key>
-						<integer>1250</integer>
+						<integer>1200</integer>
 						<key>percentage</key>
 						<integer>50</integer>
 						<key>speed</key>
-						<integer>3793</integer>
+						<integer>3489</integer>
 					</dict>
 					<dict>
 						<key>fan</key>
 						<string>F1Ac</string>
 						<key>high</key>
-						<integer>6864</integer>
+						<integer>6241</integer>
 						<key>low</key>
-						<integer>1350</integer>
+						<integer>1200</integer>
 						<key>percentage</key>
 						<integer>50</integer>
 						<key>speed</key>
-						<integer>4107</integer>
+						<integer>3720</integer>
 					</dict>
 				</array>
 				<key>uuid</key>
-				<string>C3B5407F-B2B4-4F5A-AB36-6B11D3027F9D</string>
+				<string>5DFBA22B-F552-4597-9843-1DF52CCC499E</string>
 			</dict>
 			<dict>
 				<key>model</key>
-				<string>MacBookPro16,2</string>
+				<string>MacBookPro18,3</string>
 				<key>name</key>
 				<string>High</string>
 				<key>speeds</key>
@@ -164,31 +186,53 @@
 						<key>fan</key>
 						<string>F0Ac</string>
 						<key>high</key>
-						<integer>6336</integer>
+						<integer>5779</integer>
 						<key>low</key>
-						<integer>1250</integer>
+						<integer>1200</integer>
 						<key>percentage</key>
 						<integer>100</integer>
 						<key>speed</key>
-						<integer>6336</integer>
+						<integer>5779</integer>
 					</dict>
 					<dict>
 						<key>fan</key>
 						<string>F1Ac</string>
 						<key>high</key>
-						<integer>6864</integer>
+						<integer>6241</integer>
 						<key>low</key>
-						<integer>1350</integer>
+						<integer>1200</integer>
 						<key>percentage</key>
 						<integer>100</integer>
 						<key>speed</key>
-						<integer>6864</integer>
+						<integer>6241</integer>
 					</dict>
 				</array>
 				<key>uuid</key>
-				<string>A8D88495-EAAD-41F3-99E0-572835994A06</string>
+				<string>0A008A29-2465-4786-BAC1-12FEF0896A1D</string>
 			</dict>
 		</array>
+		<key>GPU_DropdownGraph</key>
+		<string>0.16 0.63 0.60 1.00</string>
+		<key>Load_DropdownGraph1</key>
+		<string>0.16 0.63 0.60 1.00</string>
+		<key>Load_DropdownGraph15</key>
+		<string>0.03 0.21 0.26 1.00</string>
+		<key>Load_DropdownGraph5</key>
+		<string>0.83 0.21 0.51 1.00</string>
+		<key>Memory_DropdownActive</key>
+		<string>0.83 0.21 0.51 1.00</string>
+		<key>Memory_DropdownCompressed</key>
+		<string>0.03 0.21 0.26 1.00</string>
+		<key>Memory_DropdownOrderDisabled</key>
+		<string></string>
+		<key>Memory_DropdownPages</key>
+		<string>0.16 0.63 0.60 1.00</string>
+		<key>Memory_DropdownPressure</key>
+		<string>0.16 0.63 0.60 1.00</string>
+		<key>Memory_DropdownSwap</key>
+		<string>0.16 0.63 0.60 1.00</string>
+		<key>Memory_DropdownWired</key>
+		<string>0.16 0.63 0.60 1.00</string>
 		<key>Memory_MenubarMode</key>
 		<array>
 			<dict>
@@ -213,7 +257,7 @@
 		<key>Menubar-DetectedColor</key>
 		<string>1.00 1.00 1.00 0.90</string>
 		<key>MenubarSkinColor-Dark</key>
-		<integer>2</integer>
+		<integer>3</integer>
 		<key>Migrated_6.0</key>
 		<true/>
 		<key>Migrated_6.22</key>
@@ -222,6 +266,14 @@
 		<true/>
 		<key>Migrated_6.52</key>
 		<true/>
+		<key>Migrated_6.60_ARM</key>
+		<true/>
+		<key>Network_DropdownGraphDownload</key>
+		<string>0.16 0.63 0.60 1.00</string>
+		<key>Network_DropdownGraphUpload</key>
+		<string>0.83 0.21 0.51 1.00</string>
+		<key>Network_DropdownOrderDisabled</key>
+		<string></string>
 		<key>Network_MenubarMode</key>
 		<array>
 			<dict>
@@ -288,6 +340,12 @@
 				<string>10.00</string>
 			</dict>
 		</array>
+		<key>Sensor_DropdownGraph</key>
+		<string>0.16 0.63 0.60 1.00</string>
+		<key>Sensors-Limits-Updated</key>
+		<true/>
+		<key>Sensors_DropdownOrderDisabled</key>
+		<string></string>
 		<key>Sensors_MenubarMode</key>
 		<array>
 			<dict>
@@ -307,6 +365,16 @@
 			<integer>5</integer>
 			<integer>6</integer>
 		</array>
+		<key>Time_CalendarShowWeeks</key>
+		<integer>1</integer>
+		<key>Time_DropdownFormat</key>
+		<array>
+			<string>HH</string>
+			<string>':'</string>
+			<string>mm</string>
+		</array>
+		<key>Time_DropdownOrderDisabled</key>
+		<string></string>
 		<key>Time_MenubarFlashSeperators</key>
 		<integer>1</integer>
 		<key>Time_MenubarFormat</key>
@@ -336,14 +404,16 @@
 				</array>
 			</dict>
 		</array>
+		<key>Weather_DropdownOrderDisabled</key>
+		<string></string>
 		<key>Zarya-TLE</key>
 		<dict>
 			<key>time</key>
-			<real>1645711433.5413949</real>
+			<real>1646225734.842241</real>
 			<key>tle</key>
 			<string>ISS (ZARYA)             
-1 25544U 98067A   22055.15522565  .00004933  00000+0  94635-4 0  9994
-2 25544  51.6395 176.3484 0005439 158.8939 262.2120 15.49914128327650</string>
+1 25544U 98067A   22061.21033787  .00008312  00000+0  15594-3 0  9992
+2 25544  51.6434 146.3647 0005536 203.7607 179.2077 15.49533599328593</string>
 		</dict>
 	</dict>
 	<key>version</key>
