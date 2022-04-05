@@ -102,6 +102,12 @@ if [ -d "$HOME/.fly" ]; then
   export PATH="$FLYCTL_INSTALL/bin:$PATH"
 fi
 
+if [ -d "$HOME/.pyenv" ]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init --path)"
+fi
+
 # environment specific configurations
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
