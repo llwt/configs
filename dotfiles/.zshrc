@@ -43,7 +43,6 @@ plugins=(
   colored-man-pages
   git
   fnm
-  yarn
   zsh-autosuggestions
   zsh-dircolors-solarized
   zsh-syntax-highlighting

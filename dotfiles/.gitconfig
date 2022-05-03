@@ -6,6 +6,7 @@
 	insteadOf = https://github.com/
 [pull]
 	rebase = false
+	twohead = ort
 [core]
 	editor = code --wait
 [diff]
