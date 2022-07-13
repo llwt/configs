@@ -25,3 +25,5 @@
   path = ~/src/llwt/configs/dotfiles/.gitconfig-work
 [pager]
 	branch = false
+[push]
+	autoSetupRemote = true

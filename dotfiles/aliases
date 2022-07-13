@@ -17,3 +17,7 @@ alias y='yarn'
 
 # Docker Compose
 alias dcdu='docker-compose down && docker-compose up'
+
+# Kubernetes
+alias k='kubectl'
+alias kx='kubectx'
