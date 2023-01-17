@@ -1,3 +1,7 @@
+# Prevent "git_prompt_info:20: character not in range" on work laptop
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
