@@ -1,0 +1,64 @@
+#!/bin/bash
+
+if [ ! $(which saml2aws) ]; then
+    echo "Need to install saml2aws to continue" >&2
+    exit 1
+fi
+
+declare -a accounts
+declare -a ids
+
+echo "MFA methods:"
+echo "  OKTA = Use the Okta app"
+echo "  PUSH = For push approval in the Okta app"
+echo "  TOTP = Google Authenticator/Authy"
+echo "  Auto = SMS Authentication"
+read -p    "Specify preferred MFA method (enter for default: PUSH)"$'\n' MFA_METHOD
+read -p    "Enter your E-mail"$'\n'         EMAIL
+echo       "Enter Your OKTA Password"$'\n'
+read -s    PASSWORD
+read -p    "Enter your OKTA MFA Code"$'\n'  MFA
+
+echo "Using any account you have access to we can then get a list of the remaining and will add all."
+echo "Enter any one of the aws account name you have access to. (enter for default: pd-staging)"
+echo       "You can find the accounts you have access to from https://deliveryhero.okta.com/app/UserHome and the click on 'AWS Account Federation' app"
+read -p  ""   ACCOUNT_NAME
+read -p "Enter any one of the aws account number you have access to. (enter for default: 216648929716 (pd-staging))"     ACCOUNT_NO
+
+ROLE=$(echo sso-$(echo $EMAIL | cut -f 1 -d '@' | tr '.' '-')--$(echo $EMAIL | cut -f 2 -d '@' | tr '.' '-'))
+
+#defaults
+ACCOUNT_NAME=${ACCOUNT_NAME:-pd-staging}
+ACCOUNT_NO=${ACCOUNT_NO:-216648929716}
+MFA_METHOD=${MFA_METHOD:-PUSH}
+
+generate_config()
+{
+saml2aws configure --skip-prompt \
+     -a $1 \
+     -p $1 \
+     --role=arn:aws:iam::$2:role/$ROLE \
+     --username=$EMAIL \
+     --password=$PASSWORD \
+     --mfa=$MFA_METHOD \
+     --idp-provider=Okta \
+     --url=https://deliveryhero.okta.com/home/amazon_aws/0oaafbf2n0igEw89O416/272 \
+     --session-duration=36000
+
+saml2aws login --skip-prompt --idp-account=$1 --cache-saml
+
+}
+
+generate_config $ACCOUNT_NAME $ACCOUNT_NO 
+
+saml2aws -a $ACCOUNT_NAME list-roles --username=$EMAIL --password=$PASSWORD --mfa-token=$MFA --skip-prompt >> saml2aws-roles
+
+accounts=( $(awk '{print $2}' ./saml2aws-roles) )
+ids=( $(awk '{print $3}' ./saml2aws-roles | tr -d ")" | tr -d "(") )
+
+for i in "${!accounts[@]}"
+    do
+        generate_config ${accounts[$i]} ${ids[$i]}
+done
+
+rm -rf saml2aws-roles

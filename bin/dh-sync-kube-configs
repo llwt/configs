@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -eiou pipefail
+
+ACCOUNTS=$(cat ~/.aws/credentials | grep -o '\[[^]]*\]' | sed 's/[][]//g')
+
+cat ~/.aws/credentials | grep -o '\[[^]]*\]' | sed 's/[][]//g' | while read -r ACCOUNT; do
+  echo "Syncing config for $ACCOUNT"
+  aws ec2 describe-regions --profile=$ACCOUNT --region=eu-central-1 | jq ".Regions" | jq -r ".[]" | jq -r ".RegionName" | while IFS= read -r region ; do 
+      aws eks list-clusters --profile=$ACCOUNT --region=$region | jq -r ".clusters" | jq -r ".[]" | while IFS= read -r cluster ; do
+          aws eks update-kubeconfig --name $cluster --region $region --profile=$ACCOUNT || true
+      done
+  done
+done
