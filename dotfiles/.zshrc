@@ -111,6 +111,10 @@ if [ -d "$HOME/.pyenv" ]; then
   eval "$(pyenv init --path)"
 fi
 
+if command -v zoxide > /dev/null; then
+  eval "$(zoxide init zsh --cmd cd)"
+fi
+
 # environment specific configurations
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
