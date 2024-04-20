@@ -73,6 +73,7 @@ fi
 # Setup instructions reminder: https://gist.github.com/webframp/75c680930b6b2caba9a1be6ec23477c1
 export GPG_TTY=$(tty)
 
+# TODO: replace with https://github.com/marlonrichert/zsh-autocomplete
 # Tab completion to use ls colors
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 autoload -Uz compinit
@@ -113,6 +114,10 @@ fi
 
 if [ -d "$HOME/.yarn" ]; then
   export PATH="$HOME/.yarn/bin:$PATH"
+fi
+
+if command -v zoxide > /dev/null; then
+  eval "$(zoxide init zsh --cmd cd)"
 fi
 
 # environment specific configurations
