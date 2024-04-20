@@ -111,8 +111,27 @@ if [ -d "$HOME/.pyenv" ]; then
   eval "$(pyenv init --path)"
 fi
 
+if [ -d "$HOME/.yarn" ]; then
+  export PATH="$HOME/.yarn/bin:$PATH"
+fi
+
 # environment specific configurations
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
 
+
+# pnpm
+export PNPM_HOME="/Users/s.nance/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# rust
+if [ -f ~/.cargo ]; then
+  export PATH="~/.cargo/bin:$PATH"
+  source "$HOME/.cargo/env"
+fi
+# rust end

@@ -1484,7 +1484,7 @@
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
-			<integer>200</integer>
+			<integer>80</integer>
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
@@ -1538,7 +1538,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>6</integer>
+			<integer>5</integer>
 			<key>Working Directory</key>
 			<string>/Users/s.nance</string>
 		</dict>
