@@ -52,6 +52,10 @@ plugins=(
   zsh-syntax-highlighting
 )
 
+# Fix git shell issue
+# see https://github.com/ohmyzsh/ohmyzsh/issues/12267
+zstyle ':omz:alpha:lib:git' async-prompt no
+
 source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
