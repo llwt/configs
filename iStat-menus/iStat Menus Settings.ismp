@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>build</key>
-	<string>1185</string>
+	<string>1226</string>
 	<key>license</key>
 	<dict>
 		<key>email</key>
@@ -19,13 +19,28 @@
 		<string></string>
 		<key>Battery_MenubarCustomizeStates</key>
 		<integer>1</integer>
+		<key>Battery_MenubarModeAirpods</key>
+		<array>
+			<dict>
+				<key>key</key>
+				<string>8</string>
+				<key>uuid</key>
+				<string>1111BD06-0820-47AF-B0E1-06482DB22414</string>
+			</dict>
+			<dict>
+				<key>key</key>
+				<string>6</string>
+				<key>uuid</key>
+				<string>1E0B9F02-C943-4702-8F78-2AA7FF1BF50B</string>
+			</dict>
+		</array>
 		<key>Battery_MenubarModeCharged</key>
 		<array>
 			<dict>
 				<key>key</key>
 				<string>6</string>
 				<key>uuid</key>
-				<string>38B35B10-D66D-46FD-87B9-CDB41F4D800A</string>
+				<string>F8EAB443-8988-4618-97AC-1FED651CA18A</string>
 			</dict>
 		</array>
 		<key>Battery_MenubarModeCharging</key>
@@ -268,6 +283,8 @@
 		<true/>
 		<key>Migrated_6.60_ARM</key>
 		<true/>
+		<key>Migrated_WeatherProvider</key>
+		<true/>
 		<key>Network_DropdownGraphDownload</key>
 		<string>0.16 0.63 0.60 1.00</string>
 		<key>Network_DropdownGraphUpload</key>
@@ -404,19 +421,24 @@
 				</array>
 			</dict>
 		</array>
+		<key>Updater_Attempts</key>
+		<dict>
+			<key>1224</key>
+			<string>1</string>
+		</dict>
 		<key>Weather_DropdownOrderDisabled</key>
 		<string></string>
 		<key>Zarya-TLE</key>
 		<dict>
 			<key>time</key>
-			<real>1646225734.842241</real>
+			<real>1723629937.624362</real>
 			<key>tle</key>
 			<string>ISS (ZARYA)             
-1 25544U 98067A   22061.21033787  .00008312  00000+0  15594-3 0  9992
-2 25544  51.6434 146.3647 0005536 203.7607 179.2077 15.49533599328593</string>
+1 25544U 98067A   24226.93337752  .00035269  00000+0  62105-3 0  9996
+2 25544  51.6419  29.2513 0005296 199.2132 296.7788 15.50087060467500</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>6.61</string>
+	<string>6.72</string>
 </dict>
 </plist>
