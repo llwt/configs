@@ -129,9 +129,8 @@ if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
 
-
 # pnpm
-export PNPM_HOME="/Users/s.nance/Library/pnpm"
+export PNPM_HOME="${HOME}/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
