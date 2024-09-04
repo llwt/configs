@@ -7,7 +7,20 @@ Storage for configs I want to keep synched across computers.
 ```sh
 # install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install git iterm2 fnm fzf spotify gnupg pinentry-mac wget keybase visual-studio-code
+brew install \
+  fnm\
+  fzf\
+  git\
+  gnupg\
+  iterm2\
+  keybase\
+  moom\
+  pinentry-mac\
+  rustup\
+  spotify\
+  todoist\
+  visual-studio-code zoxide\
+  wget
 
 # Install fzf
 $(brew --prefix)/opt/fzf/install
@@ -52,3 +65,19 @@ Enable key repeat:
 ```sh
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 ```
+
+Manual things:
+
+- [Logitech GHub](https://www.logitech.com/en-us/software/lghub.html)
+  - auto turn on light with webcam
+- [Logi Options+](https://www.logitech.com/en-us/software/logi-options-plus.html?)
+  - gHub doesn't want to see my MX Master 3
+  - Don't forget to turn off stupid Ai features
+- Add Notion shortcut to dock (Safari: Share -> Add to Dock)
+- [Grammarly](https://www.grammarly.com/native/mac)
+
+App Store:
+
+- [Copy 'Em](https://apps.apple.com/de/app/copy-em/id876540291?l=en-GB&mt=12)
+- [Amphetamine](https://apps.apple.com/de/app/amphetamine/id937984704?l=en&mt=12)
+-

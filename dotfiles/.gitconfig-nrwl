@@ -1,0 +1,6 @@
+[gpg]
+	program = /opt/homebrew/bin/gpg
+[user]
+	signingkey = B513CD6849128F108822B4E70BBAEED01F9C996D
+	email = steven@nrwl.io
+	name = Steven Nance

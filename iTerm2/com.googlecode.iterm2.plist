@@ -1064,7 +1064,7 @@
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>80</integer>
+			<integer>160</integer>
 			<key>Command</key>
 			<string></string>
 			<key>Cursor Color</key>
@@ -1538,7 +1538,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>5</integer>
+			<integer>8</integer>
 			<key>Working Directory</key>
 			<string>/Users/s.nance</string>
 		</dict>
