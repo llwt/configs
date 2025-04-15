@@ -50,6 +50,8 @@ plugins=(
   zsh-autosuggestions
   zsh-dircolors-solarized
   zsh-syntax-highlighting
+  # git clone --depth 1 https://github.com/unixorn/fzf-zsh-plugin.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-zsh-plugin
+  fzf-zsh-plugin
 )
 
 # Fix git shell issue
@@ -102,7 +104,7 @@ if command -v fnm > /dev/null; then
 fi
 
 # Enable fzf when present
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Fly.io
 if [ -d "$HOME/.fly" ]; then
@@ -130,7 +132,7 @@ if [ -f ~/.zshrc.local ]; then
 fi
 
 # pnpm
-export PNPM_HOME="${HOME}/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
