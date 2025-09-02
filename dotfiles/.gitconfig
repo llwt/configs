@@ -8,7 +8,7 @@
 	rebase = false
 	twohead = ort
 [core]
-	editor = code --wait
+	editor = vim
 [diff]
   tool = vscode
 [difftool "vscode"]
