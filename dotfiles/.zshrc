@@ -145,3 +145,9 @@ if [ -f ~/.cargo ]; then
   source "$HOME/.cargo/env"
 fi
 # rust end
+
+# Added by Windsurf
+export PATH="/Users/steven/.codeium/windsurf/bin:$PATH"
+
+# Needed for cursor-agent
+export PATH="$HOME/.local/bin:$PATH"
