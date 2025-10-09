@@ -22,6 +22,9 @@ brew install \
   visual-studio-code zoxide\
   wget
 
+# Install aerospace
+brew install --cask nikitabobko/tap/aerospace
+
 # Install fzf
 $(brew --prefix)/opt/fzf/install
 
@@ -42,6 +45,7 @@ git clone git@github.com:llwt/configs.git
 ln -s ~/src/llwt/configs/dotfiles/.gitconfig ~/.gitconfig
 ln -fs ~/src/llwt/configs/dotfiles/.zshrc ~/.zshrc
 ln -s ~/src/llwt/configs/bin ~/.bin
+ln -s ~/src/llwt/configs/aerospace/aerospace.toml ~/.aerospace.toml
 
 # [manual] Configure iterm2 to look in ~/configs/iTerm2
 
