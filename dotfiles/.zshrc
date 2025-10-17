@@ -146,8 +146,8 @@ if [ -f ~/.cargo ]; then
 fi
 # rust end
 
-# Added by Windsurf
-export PATH="/Users/steven/.codeium/windsurf/bin:$PATH"
-
 # Needed for cursor-agent
 export PATH="$HOME/.local/bin:$PATH"
+
+# Misc binaries
+export PATH="$HOME/.bin:$PATH"
