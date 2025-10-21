@@ -11,6 +11,7 @@
           "size": "1/4",
           "windows": [
             { "bundleId": "com.spotify.client", "openIfNotRunning": false },
+            { "bundleId": "notion.id", "openIfNotRunning": false },
             { "bundleId": "net.whatsapp.WhatsApp" },
             { "bundleId": "com.todoist.mac.Todoist" }
           ]
@@ -20,6 +21,7 @@
           "size": "1/2",
           "windows": [
             { "bundleId": "com.mongodb.compass", "openIfNotRunning": false },
+            { "bundleId": "com.google.Chrome", "openIfNotRunning": false },
             { "bundleId": "app.zen-browser.zen" },
             { "bundleId": "com.todesktop.230313mzl4w4u92", "openIfNotRunning": false }
           ]
