@@ -27,5 +27,6 @@
 	branch = false
 [push]
 	autoSetupRemote = true
+	useForceIfIncludes = true
 [rerere]
 	enabled = true
