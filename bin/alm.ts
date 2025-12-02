@@ -13,110 +13,19 @@ import { spawn } from "node:child_process";
 import { readFile } from "node:fs/promises";
 import { homedir } from "node:os";
 import { parseArgs } from "node:util";
-
-// ============================================================================
-// Types
-// ============================================================================
-
-type WorkspaceLayout =
-  | "h_tiles"
-  | "v_tiles"
-  | "h_accordion"
-  | "v_accordion"
-  | "tiles"
-  | "accordion"
-  | "horizontal"
-  | "vertical"
-  | "tiling"
-  | "floating";
-
-type Orientation = "horizontal" | "vertical";
-type Size = `${number}/${number}`;
-
-interface LayoutWindow {
-  bundleId: string;
-  openIfNotRunning?: boolean;
-}
-
-interface LayoutWindowWithSize extends LayoutWindow {
-  size: Size;
-}
-
-interface LayoutContainer {
-  orientation: Orientation;
-  layout: WorkspaceLayout;
-  windows: LayoutItem[];
-}
-
-interface LayoutContainerWithSize extends LayoutContainer {
-  size: Size;
-}
-
-type LayoutItem =
-  | LayoutWindow
-  | LayoutContainer
-  | LayoutWindowWithSize
-  | LayoutContainerWithSize;
-
-type Layout = {
-  workspace: string;
-  layout: WorkspaceLayout;
-  orientation: Orientation;
-  windows: LayoutItem[];
-  display?: string | number | DisplayAlias;
-};
-
-type LayoutConfig = {
-  stashWorkspace: string;
-  layouts: Record<string, Layout>;
-};
-
-type DisplayInfo = {
-  id?: number;
-  name: string;
-  width: number;
-  height: number;
-  isMain: boolean;
-  isInternal?: boolean;
-};
-
-type DisplayAlias = "main" | "secondary" | "external" | "internal";
-
-const DisplayAlias = {
-  Main: "main" as const,
-  Secondary: "secondary" as const,
-  External: "external" as const,
-  Internal: "internal" as const,
-};
-
-type SPDisplaysDataType = {
-  _name: string;
-  spdisplays_ndrvs: {
-    _name: string;
-    "_spdisplays_display-product-id": string;
-    "_spdisplays_display-serial-number": string;
-    "_spdisplays_display-vendor-id": string;
-    "_spdisplays_display-week": string;
-    "_spdisplays_display-year": string;
-    _spdisplays_displayID: string;
-    _spdisplays_pixels: string;
-    _spdisplays_resolution: string;
-    spdisplays_main: "spdisplays_yes" | "spdisplays_no";
-    spdisplays_mirror: "spdisplays_off" | "spdisplays_on";
-    spdisplays_online: "spdisplays_yes" | "spdisplays_no";
-    spdisplays_pixelresolution: string;
-    spdisplays_resolution: string;
-    spdisplays_rotation: "spdisplays_supported" | "spdisplays_not_supported";
-    spdisplays_connection_type?: "spdisplays_internal" | string;
-  }[];
-};
-
-const SPDisplaysValues = {
-  Yes: "spdisplays_yes" as const,
-  No: "spdisplays_no" as const,
-  Supported: "spdisplays_supported" as const,
-  Internal: "spdisplays_internal" as const,
-};
+import {
+  type Layout,
+  type LayoutItem,
+  type LayoutWindow,
+  type LayoutWindowWithSize,
+  type DisplayInfo,
+  type SPDisplaysDataType,
+  SPDisplaysValues,
+  DisplayAlias,
+  type LayoutConfig,
+  type WorkspaceLayout,
+  type Size,
+} from "../src/alm/common.ts";
 
 // ============================================================================
 // Shell Execution Helper
@@ -504,13 +413,21 @@ class AerospaceAPI {
     console.log(
       `Resizing window: ${formatWindowId(windowId)} ${dimension} → ${pixels}px`
     );
-    await exec("aerospace", [
-      "resize",
-      "--window-id",
-      windowId,
-      dimension,
-      pixels.toString(),
-    ]);
+    try {
+      await exec("aerospace", [
+        "resize",
+        "--window-id",
+        windowId,
+        dimension,
+        pixels.toString(),
+      ]);
+    } catch (error) {
+      console.error(
+        `Failed to resize window: ${formatWindowId(
+          windowId
+        )} ${dimension} → ${pixels}px`
+      );
+    }
   }
 
   async launchApp(bundleId: string): Promise<void> {
@@ -577,11 +494,11 @@ class LayoutOrchestrator {
     console.log("Repositioning windows...");
     await this.repositionWindows();
 
-    console.log("Resizing windows...");
-    await this.resizeWindows();
+    // console.log("Resizing windows...");
+    // await this.resizeWindows();
 
-    console.log("Switching to workspace...");
-    await this.api.switchWorkspace(this.layout.workspace);
+    // console.log("Switching to workspace...");
+    // await this.api.switchWorkspace(this.layout.workspace);
 
     console.log("Done!");
   }
@@ -681,22 +598,23 @@ class LayoutOrchestrator {
         );
       }
 
-      // Skip first window in each group (it's the anchor)
-      if (windowGroupIndex === 0) {
-        windowGroupIndex++;
-        continue;
-      }
-
       // Join or move subsequent windows
       const windowIds = await this.api.getWindowIdsByBundleId(item.bundleId);
       for (const windowId of windowIds) {
         await this.api.focusWindow(windowId);
 
-        if (windowGroupIndex === 1) {
+        // Skip first window in each group (it's the anchor)
+        if (windowGroupIndex === 0) {
+          windowGroupIndex++;
+          console.log(
+            `Skipping anchor window in group ${formatWindowId(windowId)}`
+          );
+          continue;
+        } else if (windowGroupIndex === 1) {
           // First window after anchor: join with anchor
           await this.api.joinWindowWithLeft(windowId);
         } else {
-          // Subsequent windows: just move left
+          // Subsequent windows: just move left into group
           await this.api.moveWindowLeft(windowId);
         }
 

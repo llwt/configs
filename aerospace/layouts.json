@@ -10,7 +10,7 @@
           "layout": "v_accordion",
           "size": "1/4",
           "windows": [
-            { "bundleId": "com.spotify.client", "openIfNotRunning": false },
+            { "bundleId": "com.spotify.client", "openIfNotRunning": true },
             { "bundleId": "notion.id", "openIfNotRunning": false },
             { "bundleId": "net.whatsapp.WhatsApp" },
             { "bundleId": "com.todoist.mac.Todoist" }
@@ -23,7 +23,10 @@
             { "bundleId": "com.mongodb.compass", "openIfNotRunning": false },
             { "bundleId": "com.google.Chrome", "openIfNotRunning": false },
             { "bundleId": "app.zen-browser.zen" },
-            { "bundleId": "com.todesktop.230313mzl4w4u92", "openIfNotRunning": false }
+            {
+              "bundleId": "com.todesktop.230313mzl4w4u92",
+              "openIfNotRunning": false
+            }
           ]
         },
         {
@@ -32,6 +35,7 @@
           "windows": [
             { "bundleId": "com.openai.chat", "openIfNotRunning": false },
             { "bundleId": "com.hnc.Discord", "openIfNotRunning": false },
+            { "bundleId": "com.apple.finder", "openIfNotRunning": false },
             { "bundleId": "com.superhuman.electron" },
             { "bundleId": "com.microsoft.teams2" },
             { "bundleId": "com.tinyspeck.slackmacgap" }
