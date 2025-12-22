@@ -1,0 +1,4 @@
+[tools]
+node = "24"
+"npm:@anthropic-ai/claude-code" = "latest"
+pnpm = "10"

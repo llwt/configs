@@ -46,7 +46,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(
   colored-man-pages
   git
-  fnm
+  mise
   zsh-autosuggestions
   zsh-dircolors-solarized
   zsh-syntax-highlighting
@@ -98,9 +98,14 @@ SAVEHIST=$HISTSIZE
 setopt histignorealldups
 
 # Enable fnm when present
-export PATH=$PATH:~/.fnm
-if command -v fnm > /dev/null; then
-  eval "$(fnm env --use-on-cd)"
+# export PATH=$PATH:~/.fnm
+# if command -v fnm > /dev/null; then
+#   eval "$(fnm env --use-on-cd)"
+# fi
+
+# Enable mise when present
+if command -v mise > /dev/null; then
+  eval "$(mise activate zsh)"
 fi
 
 # Enable fzf when present

@@ -8,7 +8,7 @@ Storage for configs I want to keep synched across computers.
 # install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install \
-  fnm\
+  mise\
   fzf\
   git\
   gnupg\
@@ -46,6 +46,10 @@ ln -s ~/src/llwt/configs/dotfiles/.gitconfig ~/.gitconfig
 ln -fs ~/src/llwt/configs/dotfiles/.zshrc ~/.zshrc
 ln -s ~/src/llwt/configs/bin ~/.bin
 ln -s ~/src/llwt/configs/aerospace/aerospace.toml ~/.aerospace.toml
+ln -fs ~/src/llwt/configs/mise/config.toml ~/.config/mise/config.toml
+
+# Install mise managed dependencies
+mise install
 
 # [manual] Configure iterm2 to look in ~/configs/iTerm2
 
