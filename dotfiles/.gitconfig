@@ -21,8 +21,6 @@
 	email = stevenmnance@gmail.com
 	name = Steven Nance
 	signingkey = 81321DC2803CDD04C9FF8E5825CA48C543589339
-[includeIf "gitdir:~/src/nrwl/"]
-  path = ~/src/llwt/configs/dotfiles/.gitconfig-nrwl
 [pager]
 	branch = false
 [push]
@@ -30,3 +28,5 @@
 	useForceIfIncludes = true
 [rerere]
 	enabled = true
+[includeIf "gitdir:~/src/nrwl/"]
+  path = ~/src/llwt/configs/dotfiles/.gitconfig-nrwl
