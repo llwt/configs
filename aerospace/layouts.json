@@ -10,8 +10,9 @@
           "layout": "v_accordion",
           "size": "1/4",
           "windows": [
-            { "bundleId": "com.spotify.client", "openIfNotRunning": true },
+            { "bundleId": "com.spotify.client", "openIfNotRunning": false },
             { "bundleId": "com.qobuz.desktop", "openIfNotRunning": false },
+            { "bundleId": "com.tidal.desktop", "openIfNotRunning": false },
             { "bundleId": "notion.id", "openIfNotRunning": false },
             { "bundleId": "net.whatsapp.WhatsApp" },
             { "bundleId": "com.todoist.mac.Todoist" }
